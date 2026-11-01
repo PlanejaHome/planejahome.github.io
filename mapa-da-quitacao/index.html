@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mapa da Quitação: seu plano de dívidas mês a mês | Mês Fechado</title>
+<meta name="description" content="Veja mês a mês quando cada dívida termina e o que pagar agora. App que abre no navegador, sem cadastro e sem internet, com guia em PDF. R$ 37,00, pagamento único, garantia de 7 dias.">
+<meta property="og:title" content="Mapa da Quitação: seu plano de dívidas mês a mês">
+<meta property="og:description" content="Cadastre as dívidas, compare os dois jeitos de pagar e acompanhe tudo num checklist. R$ 37,00, pagamento único.">
+<meta property="og:image" content="https://planejahome.github.io/mapa-da-quitacao/img/capa.png">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://planejahome.github.io/mapa-da-quitacao/">
+<style>
+:root{--t:#0E7C74;--td:#0a5650;--a:#E9A93B;--ink:#10302d;--mut:#4a6662;--bg:#f3f7f5;--card:#fff}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:18px}
+img{max-width:100%;display:block}a{color:var(--t)}
+.w{max-width:1040px;margin:0 auto;padding:0 22px}
+.eyebrow{font-size:14px;letter-spacing:.2em;font-weight:700;text-transform:uppercase}
+header.hero{background:radial-gradient(900px 500px at 100% 0,#1c9a8f,transparent 60%),linear-gradient(160deg,#0a5650,#0e7c74 60%,#13867c);color:#fff;padding:56px 0 70px}
+.hero .eyebrow{color:#bfe9e3}
+.hero h1{font-size:clamp(34px,5.4vw,56px);line-height:1.08;letter-spacing:-.02em;margin:14px 0 18px;max-width:820px}
+.hero h1 em{font-style:normal;color:#f4b84a}
+.hero p.lead{font-size:clamp(18px,2.2vw,22px);max-width:720px;color:#e6f6f3}
+.btn{display:inline-block;background:var(--a);color:#3b2600;font-weight:800;font-size:20px;padding:17px 30px;border-radius:14px;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.22)}
+.btn:hover{filter:brightness(1.06)}
+.cta{margin-top:28px}.cta small{display:block;margin-top:12px;color:#cfeee9;font-size:15px}
+.shot{margin-top:44px;border-radius:18px;overflow:hidden;box-shadow:0 26px 60px rgba(4,40,36,.45);background:#fff}
+.shot .bar{height:30px;background:#e8eeec;display:flex;gap:7px;align-items:center;padding:0 14px}.bar i{width:10px;height:10px;border-radius:50%;background:#c2cfcc}
+section{padding:58px 0}section.alt{background:#fff}
+h2{font-size:clamp(26px,3.6vw,38px);line-height:1.12;letter-spacing:-.015em;margin-bottom:16px;color:var(--td)}
+.sub{color:var(--mut);max-width:740px;margin-bottom:26px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.box{background:var(--card);border-radius:16px;padding:22px;box-shadow:0 8px 24px rgba(10,60,55,.10)}
+section.alt .box{background:var(--bg);box-shadow:none}
+.box h3{font-size:20px;color:var(--td);margin-bottom:6px}.box p{font-size:16.5px;color:var(--mut)}
+.fig{border-radius:14px;overflow:hidden;box-shadow:0 10px 28px rgba(10,60,55,.16);background:#fff;margin:22px 0}
+.fig figcaption{padding:10px 16px;font-size:14.5px;color:var(--mut);background:#fff}
+.two{display:grid;gap:26px;grid-template-columns:1fr 1fr;align-items:center}
+@media(max-width:760px){.two{grid-template-columns:1fr}body{font-size:17px}}
+.phones{display:flex;gap:16px;justify-content:center}.phones div{background:#101a19;border-radius:30px;padding:8px;width:46%;box-shadow:0 18px 40px rgba(4,40,36,.3)}.phones img{border-radius:23px}
+ul.chk{list-style:none}ul.chk li{padding:8px 0 8px 34px;position:relative}ul.chk li:before{content:"";position:absolute;left:0;top:13px;width:20px;height:20px;border-radius:50%;background:var(--t)}
+ul.chk li:after{content:"";position:absolute;left:7px;top:17px;width:5px;height:10px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+ul.no li:before{background:#b8453b}ul.no li:after{content:"×";border:0;transform:none;left:5.5px;top:11px;color:#fff;font-size:17px;font-weight:800;width:auto;height:auto}
+.files .f{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #e1ebe8}.files .f:last-child{border:0}
+.badge{flex:none;background:var(--t);color:#fff;font-weight:800;font-size:13px;border-radius:8px;padding:4px 10px;margin-top:3px}.badge.pdf{background:#c0392b}
+.f span.badge{color:#fff;font-size:13px}.f b{display:block;color:var(--td);word-break:break-all}.f span{font-size:16px;color:var(--mut)}
+ol.steps{list-style:none;counter-reset:s}ol.steps li{counter-increment:s;padding:12px 0 12px 58px;position:relative}
+ol.steps li:before{content:counter(s);position:absolute;left:0;top:8px;width:40px;height:40px;border-radius:50%;background:var(--a);color:#3b2600;font-weight:800;text-align:center;line-height:40px}
+.price{background:linear-gradient(160deg,#0a5650,#0e7c74);color:#fff;border-radius:22px;padding:38px 30px;text-align:center}
+.price .v{font-size:clamp(46px,8vw,70px);font-weight:800;line-height:1;margin:10px 0}.price p{color:#d7f1ed}
+.price .btn{margin-top:22px}
+.guar{display:flex;gap:18px;align-items:center}.guar .seal{flex:none;width:92px;height:92px;border-radius:50%;background:var(--a);color:#3b2600;font-weight:800;text-align:center;line-height:1.05;display:flex;flex-direction:column;justify-content:center}.seal b{font-size:34px}.seal span{font-size:13px}
+details{background:#fff;border-radius:14px;margin-bottom:12px;box-shadow:0 4px 14px rgba(10,60,55,.08)}
+summary{cursor:pointer;padding:17px 20px;font-weight:700;color:var(--td);list-style:none}summary::-webkit-details-marker{display:none}
+summary:after{content:"+";float:right;font-size:24px;line-height:1;color:var(--t)}details[open] summary:after{content:"−"}
+details p{padding:0 20px 18px;color:var(--mut);font-size:16.5px}
+.aviso{font-size:14.5px;color:var(--mut);background:#fdf3dc;border-radius:12px;padding:14px 18px;margin-top:22px}
+footer{background:#0a3f3b;color:#b9d8d4;padding:34px 0;font-size:14.5px}footer a{color:#e3f4f1}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:#fff;box-shadow:0 -6px 22px rgba(0,0,0,.15);padding:10px 16px;display:none;align-items:center;justify-content:space-between;gap:12px;z-index:9}
+.sticky b{color:var(--td)}.sticky .btn{padding:12px 20px;font-size:17px;box-shadow:none}
+@media(max-width:760px){.sticky{display:flex}body{padding-bottom:70px}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="w">
+<div class="eyebrow">Mês Fechado</div>
+<h1>Veja <em>mês a mês</em> quando cada dívida termina e o que pagar agora</h1>
+<p class="lead">O Mapa da Quitação é um app que abre no navegador. Você cadastra as dívidas, escolhe como pagar e acompanha tudo num checklist. Sem cadastro, sem internet e sem mensalidade.</p>
+<div class="cta"><a class="btn" href="https://pay.kiwify.com.br/DJVTDFg">Quero o Mapa da Quitação por R$ 37,00</a>
+<small>Pagamento único. Garantia de 7 dias. Pix ou cartão. Simulação com os dados que você informar: não é oferta nem garantia de condições.</small></div>
+<div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="img/inicio.png" width="1200" height="790" alt="Tela Início do Mapa da Quitação: Faltam 12 meses, última parcela em 10/10/2027, barra de progresso e indicadores"></div>
+</div></header>
+
+<section><div class="w">
+<h2>Várias dívidas, uma pergunta por mês</h2>
+<p class="sub">Cartão, cheque especial, carnê, empréstimo, conta atrasada. Cada uma tem a sua parcela, a sua data e o seu juro. No fim do mês, a dúvida é sempre a mesma: quanto falta, o que pago primeiro e se aquela proposta de acordo compensa. Fazer essa conta de cabeça, ou em várias anotações, cansa e dá erro.</p>
+<div class="grid">
+<div class="box"><h3>Você não vê o todo</h3><p>Cada dívida mostra um pedaço. Falta uma tela que junte tudo e diga quando a última parcela cai.</p></div>
+<div class="box"><h3>Juros ao mês confundem</h3><p>Um cheque especial a 7,9% ao mês parece pouco. Ao ano, passa de 149%. O app mostra os dois números.</p></div>
+<div class="box"><h3>A proposta chega e a dúvida também</h3><p>Pagar à vista com desconto ou continuar pagando? Com os números na mão, a conversa fica mais calma.</p></div>
+</div></div></section>
+
+<section class="alt"><div class="w">
+<h2>O que é o Mapa da Quitação</h2>
+<p class="sub">Um arquivo único, em português, com valores em reais e datas DD/MM/AAAA. Você abre, digita as suas dívidas e o app monta o plano mês a mês. Tem cinco telas:</p>
+<div class="grid">
+<div class="box"><h3>Início</h3><p>"Faltam 12 meses", a data da última parcela, a barra de progresso com marcos e a próxima conquista.</p></div>
+<div class="box"><h3>Dívidas</h3><p>Um cartão para cada dívida, com juros ao mês (e a conta ao ano), parcela e alertas de dívida cara.</p></div>
+<div class="box"><h3>Plano</h3><p>Menor primeiro e mais cara primeiro, lado a lado, com meses, última parcela e juros de cada um.</p></div>
+<div class="box"><h3>Mês a mês</h3><p>O checklist do que pagar em cada mês. Marque o que já pagou e imprima em A4.</p></div>
+<div class="box"><h3>Simular</h3><p>"E se eu pagar R$ 300,00 a mais?" e "Recebi uma proposta de acordo", à vista ou parcelada.</p></div>
+<div class="box"><h3>Visual claro</h3><p>Cartões coloridos, gráficos, modo escuro e layout próprio para o celular.</p></div>
+</div>
+<figure class="fig"><img src="img/dividas.png" loading="lazy" alt="Tela Dívidas com cartões por tipo de dívida, juros ao mês e selos de alerta"><figcaption>Dívidas: cada cartão mostra saldo, juros ao mês, parcela e até quando vai. Exemplo com dados fictícios.</figcaption></figure>
+</div></section>
+
+<section><div class="w">
+<h2>Os dois jeitos de pagar, lado a lado</h2>
+<p class="sub">Menor primeiro quita as dívidas pequenas antes e libera parcelas mais cedo. Mais cara primeiro ataca a dívida com mais juros. O app calcula os dois com as suas dívidas e deixa você comparar. Ele não escolhe por você.</p>
+<figure class="fig"><img src="img/metodos.png" loading="lazy" alt="Plano com os dois métodos: meses, última parcela e juros de cada um"><img src="img/comparacao.png" loading="lazy" alt="Gráfico com o saldo total caindo nos dois métodos"><figcaption>Plano: a linha cheia é o método escolhido, a tracejada é o outro. Exemplo com dados fictícios.</figcaption></figure>
+<div class="two" style="margin-top:34px">
+<div><h2>Chegou uma proposta de acordo?</h2><p class="sub" style="margin-bottom:0">Digite o valor à vista, ou a entrada e as parcelas. O app mostra quanto custaria continuar pagando aquela dívida, quanto custa o acordo e como o plano todo muda. Se quiser, aplique o acordo no plano com um botão. Antes de aceitar, peça a proposta por escrito e confira o custo total.</p></div>
+<figure class="fig" style="margin:0"><img src="img/acordo.png" loading="lazy" alt="Simulador de proposta de acordo comparando continuar pagando com o acordo"><figcaption>Simular: proposta à vista comparada com continuar pagando. Exemplo com dados fictícios.</figcaption></figure>
+</div>
+</div></section>
+
+<section class="alt"><div class="w">
+<div class="two">
+<div><h2>Um checklist para cada mês</h2><p class="sub" style="margin-bottom:0">O plano vira uma lista: neste mês, pague isto, até este dia. Marque cada pagamento e a barra de progresso e os marcos andam junto. Dá para imprimir em A4, com caixinhas e um campo "Pago em".</p></div>
+<figure class="fig" style="margin:0"><img src="img/checklist.png" loading="lazy" alt="Checklist do mês com as dívidas, valores e caixinhas para marcar"><figcaption>Mês a mês: o checklist do mês atual. Exemplo com dados fictícios.</figcaption></figure>
+</div></div></section>
+
+<section><div class="w">
+<h2>O que vem na sua compra</h2>
+<div class="two"><div class="box files">
+<div class="f"><span class="badge">HTML</span><div><b>mapa-da-quitacao.html</b><span>O app em branco, para os seus dados.</span></div></div>
+<div class="f"><span class="badge">HTML</span><div><b>mapa-da-quitacao-EXEMPLO.html</b><span>O app já preenchido, com uma família fictícia de 7 dívidas, para você explorar antes de digitar as suas.</span></div></div>
+<div class="f"><span class="badge pdf">PDF</span><div><b>mapa-da-quitacao-GUIA.pdf</b><span>Guia de 33 páginas, escrito para quem nunca usou um app, com prints numerados: primeiro uso, rotina mensal, backup, impressão e problemas comuns.</span></div></div>
+</div><figure class="fig" style="margin:0"><img src="img/guia.png" loading="lazy" alt="Capa e sumário do guia em PDF"><figcaption>Capa e sumário do guia.</figcaption></figure></div>
+</div></section>
+
+<section class="alt"><div class="w"><div class="two">
+<div><h2>É para você se...</h2><ul class="chk">
+<li>tem duas ou mais dívidas e quer ver tudo num lugar só;</li>
+<li>quer saber quando a última parcela cai e o que pagar em cada mês;</li>
+<li>recebeu uma proposta de acordo e quer comparar com calma;</li>
+<li>prefere um app que funciona sem internet e sem cadastro.</li></ul></div>
+<div><h2>Não é para você se...</h2><ul class="chk no">
+<li>procura indicação de crédito, empréstimo ou renegociação feita por alguém;</li>
+<li>espera que o app diga qual método ou acordo escolher;</li>
+<li>não tem como consultar o saldo e a parcela das dívidas (a estimativa de juros ajuda, mas o saldo é você quem informa);</li>
+<li>quer controlar todo o orçamento da casa, e não só as dívidas.</li></ul></div>
+</div></div></section>
+
+<section><div class="w">
+<h2>Como acessar e começar</h2>
+<div class="two"><div>
+<p class="sub">Logo depois do pagamento, você baixa os três arquivos pela área do comprador na Kiwify. Eles também chegam por e-mail.</p>
+<ol class="steps">
+<li>Abra o arquivo no navegador (no computador, dois cliques).</li>
+<li>Cadastre as suas dívidas. Não sabe os juros? Use o botão "Não sei os juros".</li>
+<li>Diga quanto dá para pagar por mês e escolha o método.</li>
+<li>Siga o checklist e marque cada pagamento.</li></ol></div>
+<div><div class="phones"><div><img src="img/celular-inicio.png" loading="lazy" alt="Tela Início no celular"></div><div><img src="img/celular-mes.png" loading="lazy" alt="Tela Mês a mês no celular"></div></div>
+<p class="aviso" style="background:#fff;margin-top:20px">Funciona no navegador do computador e do celular Android. No iPhone/iPad, o arquivo abre só para consulta: para preencher, use um computador ou um celular Android, e leve os dados pelo backup.</p></div></div>
+</div></section>
+
+<section class="alt"><div class="w"><div class="two">
+<div class="price"><div class="eyebrow" style="color:#bfe9e3">Mapa da Quitação</div><div class="v">R$ 37,00</div><p>Pagamento único, sem mensalidade.<br>Pix ou cartão.</p><a class="btn" href="https://pay.kiwify.com.br/DJVTDFg">Quero o Mapa da Quitação</a></div>
+<div class="guar"><div class="seal"><b>7</b><span>DIAS</span></div><div><h2 style="margin-bottom:8px">Garantia de 7 dias</h2><p class="sub" style="margin:0">Baixou, testou e não era o que esperava? Peça o reembolso em até 7 dias, pela Kiwify ou pelo e-mail de suporte. O valor volta para você.</p></div></div>
+</div>
+<p class="aviso">Simulação com os dados que você informar. Não é oferta, recomendação nem garantia de condições, e não substitui aconselhamento financeiro. Considera juros fixos, sem novas compras, tarifas, multas ou IOF. Os valores reais dependem do contrato de cada dívida.</p>
+</div></section>
+
+<section><div class="w">
+<h2>Perguntas frequentes</h2>
+<details><summary>O que eu recebo?</summary><p>Três arquivos: o app em branco (mapa-da-quitacao.html), o mesmo app já preenchido com uma família fictícia de 7 dívidas (mapa-da-quitacao-EXEMPLO.html) e um guia em PDF de 33 páginas, com prints numerados e passo a passo.</p></details>
+<details><summary>Preciso de internet, de cadastro ou de Excel?</summary><p>Não. O app abre no navegador e funciona sem internet, sem conta e sem Excel. Você só precisa de internet para baixar os arquivos depois da compra.</p></details>
+<details><summary>Funciona no celular?</summary><p>Funciona no navegador do computador e do celular Android. No iPhone/iPad, o arquivo abre só para consulta: para preencher, use um computador ou um celular Android, e leve os dados pelo backup.</p></details>
+<details><summary>Qual a diferença entre &quot;menor primeiro&quot; e &quot;mais cara primeiro&quot;?</summary><p>No menor primeiro, o dinheiro que sobra vai para a dívida de menor saldo. No mais cara primeiro, vai para a dívida que cobra mais juros. O app mostra os dois lado a lado, com meses, última parcela e juros de cada um. Ele não diz qual escolher: a decisão é sua.</p></details>
+<details><summary>Não sei os juros da minha dívida. E agora?</summary><p>Use o botão &quot;Não sei os juros&quot;: o app preenche uma estimativa típica para aquele tipo de dívida, e você pode editar. O valor real está no contrato, no extrato ou no aplicativo de quem cobra. Quando achar o número certo, é só corrigir.</p></details>
+<details><summary>O app diz se devo aceitar uma proposta de acordo?</summary><p>Não. Você digita a proposta que recebeu, à vista ou parcelada, e o app compara com continuar pagando e mostra o efeito no plano todo. Aceitar ou recusar é decisão sua. Antes de fechar, peça a proposta por escrito.</p></details>
+<details><summary>O resultado é garantido?</summary><p>Não. É uma simulação com os dados que você informou, com juros fixos e sem novas compras, tarifas, multas ou IOF. Os valores reais dependem do contrato de cada dívida. O app não é oferta, recomendação nem aconselhamento financeiro.</p></details>
+<details><summary>Meus dados ficam salvos? Alguém vê o que eu digito?</summary><p>Os dados ficam só no navegador do seu aparelho. Nada é enviado pela internet. Use &quot;Salvar backup&quot; para guardar uma cópia e &quot;Abrir backup&quot; para levar o plano de um aparelho para outro.</p></details>
+<details><summary>Posso imprimir?</summary><p>Pode. O app imprime o checklist do mês em A4, com caixinhas para marcar e um campo &quot;Pago em&quot;, e também um resumo com Início, Dívidas e Plano.</p></details>
+<details><summary>O app avisa que a parcela não cobre os juros. O que isso quer dizer?</summary><p>Que, naquele mês, os juros da dívida são maiores ou iguais à parcela. Pagando só aquela parcela, a dívida não diminui. Se o plano todo não consegue baixar o saldo, o app mostra que ele não termina e você pode testar um valor maior na aba Simular.</p></details>
+<details><summary>Tem mensalidade?</summary><p>Não. O pagamento é único. Você baixa os arquivos e fica com eles.</p></details>
+<details><summary>Como peço o reembolso?</summary><p>Você tem 7 dias, a partir da compra, para pedir o dinheiro de volta pelo painel da Kiwify ou pelo e-mail contatoplanejahome@gmail.com. Sem perguntas difíceis.</p></details>
+<div class="cta" style="text-align:center;margin-top:30px"><a class="btn" href="https://pay.kiwify.com.br/DJVTDFg">Quero o Mapa da Quitação por R$ 37,00</a></div>
+</div></section>
+
+<footer><div class="w"><b>Mês Fechado</b>, uma marca da Planeja Home. Compra e entrega pela Kiwify. Suporte: <a href="mailto:contatoplanejahome@gmail.com">contatoplanejahome@gmail.com</a>.<br>Os exemplos usam dados fictícios. O Mapa da Quitação é uma ferramenta de simulação e não oferece crédito, renegociação ou consultoria financeira.</div></footer>
+<div class="sticky"><span><b>R$ 37,00</b> · pagamento único</span><a class="btn" href="https://pay.kiwify.com.br/DJVTDFg">Quero o Mapa</a></div>
+</body>
+</html>

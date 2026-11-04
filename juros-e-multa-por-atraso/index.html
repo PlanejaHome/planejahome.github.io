@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Juros e multa por atraso: calcule conta e boleto vencido</title>
+<meta name="description" content="Calcule quanto fica uma conta, boleto ou fatura paga com atraso: multa, juros de mora por dia e valor total atualizado. Grátis, sem cadastro.">
+<link rel="canonical" href="https://planejahome.github.io/juros-e-multa-por-atraso/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Juros e multa por atraso: calcule conta e boleto vencido">
+<meta property="og:description" content="Calcule quanto fica uma conta, boleto ou fatura paga com atraso: multa, juros de mora por dia e valor total atualizado. Grátis, sem cadastro.">
+<meta property="og:url" content="https://planejahome.github.io/juros-e-multa-por-atraso/">
+<meta property="og:locale" content="pt_BR">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de juros e multa por atraso", "url": "https://planejahome.github.io/juros-e-multa-por-atraso/", "description": "Calcule quanto fica uma conta, boleto ou fatura paga com atraso: multa, juros de mora por dia e valor total atualizado. Grátis, sem cadastro.", "applicationCategory": "FinanceApplication", "operatingSystem": "Qualquer (navegador)", "inLanguage": "pt-BR", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "A multa pode ser maior que 2%?", "acceptedAnswer": {"@type": "Answer", "text": "Em relações de consumo com fornecimento de crédito, o CDC limita a multa de mora a 2%. Em outros tipos de contrato (como alguns aluguéis) o percentual pode ser diferente; vale o que está no contrato, dentro da lei."}}, {"@type": "Question", "name": "Os juros são simples ou compostos?", "acceptedAnswer": {"@type": "Answer", "text": "Em boletos e contas de consumo, o mais comum é juros simples proporcionais aos dias. Financiamentos e cartão podem ter regras próprias de encargos."}}, {"@type": "Question", "name": "Fim de semana conta como atraso?", "acceptedAnswer": {"@type": "Answer", "text": "Quando o vencimento cai em dia não útil, em geral o pagamento pode ser feito no próximo dia útil sem encargos. Fora isso, contam-se dias corridos."}}, {"@type": "Question", "name": "Por que o valor do banco ficou diferente?", "acceptedAnswer": {"@type": "Answer", "text": "Pode haver correção monetária, arredondamento diário ou juros calculados de outra forma. Use a segunda via atualizada como valor oficial."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://planejahome.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Calculadora de juros e multa por atraso", "item": "https://planejahome.github.io/juros-e-multa-por-atraso/"}]}]</script>
+</head>
+<body>
+<header class="topo"><div class="wrap"><a class="marca" href="/">Planeja Home</a></div></header>
+<main class="wrap">
+
+<nav class="trilha"><a href="/">Início</a> › <a href="/#dividas">Dívidas e financiamentos</a></nav>
+<h1>Calculadora de juros e multa por atraso</h1>
+<p class="intro">Informe o valor original, quantos dias de atraso e as condições da cobrança (normalmente impressas no boleto ou no contrato).</p>
+<section class="calc" aria-label="Calculadora">
+<form id="calc-form" onsubmit="return false">
+<label class="campo"><span>Valor original</span><span class="entrada"><input type="number" inputmode="decimal" id="in-valor" value="800" step="10" min="0"><span class="un">R$</span></span></label><label class="campo"><span>Dias de atraso</span><span class="entrada"><input type="number" inputmode="decimal" id="in-dias" value="15" step="1" min="0"><span class="un">dias</span></span></label><label class="campo"><span>Multa</span><span class="entrada"><input type="number" inputmode="decimal" id="in-multa" value="2" step="0.1" min="0"><span class="un">%</span></span></label><label class="campo"><span>Juros de mora</span><span class="entrada"><input type="number" inputmode="decimal" id="in-juros" value="1" step="0.1" min="0"><span class="un">% ao mês</span></span></label>
+</form>
+<div class="resultados" aria-live="polite">
+<div class="res"><span>Valor da multa</span><strong id="out-multa_v">—</strong></div><div class="res"><span>Juros de mora</span><strong id="out-juros_v">—</strong></div><div class="res destaque"><span>Total a pagar</span><strong id="out-total">—</strong></div><div class="res"><span>Acréscimo sobre o original</span><strong id="out-acresc">—</strong></div>
+</div>
+<p class="acoes"><button type="button" id="btn-exemplo" class="sec">Preencher com o exemplo</button> <button type="button" id="btn-imprimir" class="sec">Imprimir resultado</button></p>
+
+</section>
+<section><h2>Como o cálculo funciona</h2>
+<div class="formula">Multa = valor × multa%<br>Juros = valor × juros mensais% × dias ÷ 30<br>Total = valor + multa + juros</div>
+<p>A multa é cobrada uma única vez, assim que a conta vence. Os juros de mora são proporcionais ao tempo: a forma mais comum é aplicar a taxa mensal de forma simples e proporcional aos dias (pro rata die), considerando o mês comercial de 30 dias.</p><p>Algumas cobranças informam os juros diretamente por dia (por exemplo 0,033% ao dia, que equivale a cerca de 1% ao mês). Nesse caso, multiplique a taxa diária por 30 para usar o campo mensal.</p><p>Contratos podem prever também correção monetária por índice de inflação, que não está incluída aqui. Confira sempre o valor final com o credor ou pela segunda via atualizada.</p>
+</section>
+<section><h2>Exemplo resolvido</h2>
+<p>Uma conta de R$ 800 paga 15 dias depois do vencimento, com multa de 2% e juros de 1% ao mês: multa = 800 × 0,02 = R$ 16; juros = 800 × 0,01 × 15 ÷ 30 = R$ 4. Total: R$ 820, um acréscimo de 2,5%.</p>
+<div class="tabelas"><table><caption>Dados do exemplo</caption><tr><td>Valor original</td><td>800 R$</td></tr><tr><td>Dias de atraso</td><td>15 dias</td></tr><tr><td>Multa</td><td>2 %</td></tr><tr><td>Juros de mora</td><td>1 % ao mês</td></tr></table>
+<table><caption>Resultado</caption><tr><td>Valor da multa</td><td><strong>R$ 16,00</strong></td></tr><tr><td>Juros de mora</td><td><strong>R$ 4,00</strong></td></tr><tr><td>Total a pagar</td><td><strong>R$ 820,00</strong></td></tr><tr><td>Acréscimo sobre o original</td><td><strong>2,50%</strong></td></tr></table></div>
+</section>
+<section><h2>Valores de referência</h2><ul class="refs"><li>Multa de mora limitada a 2% do valor da prestação em contratos de crédito ao consumidor. <span class="fonte">Fonte: Código de Defesa do Consumidor (Lei 8.078/1990), art. 52, § 1º.</span></li><li>Juros de mora de 1% ao mês são o padrão mais comum em boletos e contratos de consumo; confira o percentual impresso no seu documento. <span class="fonte">Fonte: prática usual de cobrança; o contrato ou boleto define o percentual aplicável.</span></li></ul></section>
+<section class="upsell"><h2>Quer ir além desta conta? Mapa da Quitação</h2><p>Esta calculadora faz uma conta isolada. O app reúne todas as suas dívidas, mostra mês a mês quando cada uma termina e o que pagar agora, e traz guia em PDF e um exemplo preenchido.</p><p><a class="botao" href="/mapa-da-quitacao/?utm_source=site&utm_medium=calc&utm_campaign=juros-e-multa-por-atraso">Conhecer o Mapa da Quitação</a> <span class="miudo">R$ 37,00, pagamento único, garantia de 7 dias.</span></p></section>
+
+<section class="faq"><h2>Perguntas frequentes</h2><details><summary>A multa pode ser maior que 2%?</summary><p>Em relações de consumo com fornecimento de crédito, o CDC limita a multa de mora a 2%. Em outros tipos de contrato (como alguns aluguéis) o percentual pode ser diferente; vale o que está no contrato, dentro da lei.</p></details><details><summary>Os juros são simples ou compostos?</summary><p>Em boletos e contas de consumo, o mais comum é juros simples proporcionais aos dias. Financiamentos e cartão podem ter regras próprias de encargos.</p></details><details><summary>Fim de semana conta como atraso?</summary><p>Quando o vencimento cai em dia não útil, em geral o pagamento pode ser feito no próximo dia útil sem encargos. Fora isso, contam-se dias corridos.</p></details><details><summary>Por que o valor do banco ficou diferente?</summary><p>Pode haver correção monetária, arredondamento diário ou juros calculados de outra forma. Use a segunda via atualizada como valor oficial.</p></details></section>
+<section><h2>Outras calculadoras de dívidas e financiamentos</h2><ul class="lista"><li><a href="/parcela-de-financiamento/">Calculadora de parcela de financiamento (tabela Price)</a></li><li><a href="/comprometimento-de-renda/">Calculadora de comprometimento de renda com dívidas</a></li></ul></section>
+
+</main>
+<footer class="rodape"><div class="wrap">
+<p><a href="/">Todas as calculadoras</a> · <a href="/privacidade/">Política de Privacidade</a> · <a href="/termos/">Termos de Uso</a></p>
+<p class="miudo">Ferramentas informativas. Os resultados são estimativas e não substituem orientação profissional financeira, contábil ou jurídica.</p>
+</div></footer>
+<script>window.CALC={"entradas": ["valor", "dias", "multa", "juros"], "saidas": [{"id": "multa_v", "expr": "valor * multa / 100", "fmt": "brl"}, {"id": "juros_v", "expr": "valor * juros / 100 * dias / 30", "fmt": "brl"}, {"id": "total", "expr": "valor + multa_v + juros_v", "fmt": "brl"}, {"id": "acresc", "expr": "(multa_v + juros_v) / valor * 100", "fmt": "pct", "casas": 2, "invalido": "—"}], "exemplo": {"valor": 800, "dias": 15, "multa": 2, "juros": 1}};</script>
+<script src="/assets/calc.js" defer></script>
+<script data-goatcounter="https://planejahome.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

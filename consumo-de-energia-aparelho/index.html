@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consumo de energia: quanto um aparelho gasta por mês em R$</title>
+<meta name="description" content="Calcule quantos kWh e quantos reais um aparelho elétrico gasta por mês e por ano a partir da potência, das horas de uso e da tarifa da sua conta.">
+<link rel="canonical" href="https://planejahome.github.io/consumo-de-energia-aparelho/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Consumo de energia: quanto um aparelho gasta por mês em R$">
+<meta property="og:description" content="Calcule quantos kWh e quantos reais um aparelho elétrico gasta por mês e por ano a partir da potência, das horas de uso e da tarifa da sua conta.">
+<meta property="og:url" content="https://planejahome.github.io/consumo-de-energia-aparelho/">
+<meta property="og:locale" content="pt_BR">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de consumo de energia por aparelho", "url": "https://planejahome.github.io/consumo-de-energia-aparelho/", "description": "Calcule quantos kWh e quantos reais um aparelho elétrico gasta por mês e por ano a partir da potência, das horas de uso e da tarifa da sua conta.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Qualquer (navegador)", "inLanguage": "pt-BR", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Onde encontro a potência do aparelho?", "acceptedAnswer": {"@type": "Answer", "text": "Na etiqueta colada no aparelho, na caixa ou no manual, em watts (W). Se vier em kW, multiplique por 1.000."}}, {"@type": "Question", "name": "Como calculo para geladeira e ar-condicionado?", "acceptedAnswer": {"@type": "Answer", "text": "O compressor liga e desliga, então a conta pela potência superestima o gasto. Use o consumo mensal em kWh da etiqueta de eficiência ou um medidor de tomada."}}, {"@type": "Question", "name": "Qual tarifa usar?", "acceptedAnswer": {"@type": "Answer", "text": "Divida o valor total da última conta pelos kWh consumidos. Isso já inclui impostos e bandeira tarifária."}}, {"@type": "Question", "name": "Aparelho em stand-by gasta?", "acceptedAnswer": {"@type": "Answer", "text": "Gasta pouco, em geral de 1 a 5 W, mas são 24 horas por dia. Um aparelho com 3 W em espera consome cerca de 2,2 kWh por mês."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://planejahome.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Calculadora de consumo de energia por aparelho", "item": "https://planejahome.github.io/consumo-de-energia-aparelho/"}]}]</script>
+</head>
+<body>
+<header class="topo"><div class="wrap"><a class="marca" href="/">Planeja Home</a></div></header>
+<main class="wrap">
+
+<nav class="trilha"><a href="/">Início</a> › <a href="/#casa">Casa e consumo</a></nav>
+<h1>Calculadora de consumo de energia por aparelho</h1>
+<p class="intro">Descubra quais aparelhos pesam na conta de luz. A potência fica na etiqueta ou no manual; a tarifa por kWh está na sua conta de energia.</p>
+<section class="calc" aria-label="Calculadora">
+<form id="calc-form" onsubmit="return false">
+<label class="campo"><span>Potência do aparelho</span><span class="entrada"><input type="number" inputmode="decimal" id="in-pot" value="5500" step="10" min="0"><span class="un">W</span></span></label><label class="campo"><span>Horas de uso por dia</span><span class="entrada"><input type="number" inputmode="decimal" id="in-horas" value="0.5" step="0.25" min="0"><span class="un">h/dia</span></span><small>30 minutos = 0,5.</small></label><label class="campo"><span>Dias de uso por mês</span><span class="entrada"><input type="number" inputmode="decimal" id="in-dias" value="30" step="1" min="0"><span class="un">dias</span></span></label><label class="campo"><span>Tarifa por kWh (com impostos)</span><span class="entrada"><input type="number" inputmode="decimal" id="in-tarifa" value="0.95" step="0.01" min="0"><span class="un">R$/kWh</span></span><small>Valor total da conta ÷ kWh consumidos dá uma boa aproximação.</small></label>
+</form>
+<div class="resultados" aria-live="polite">
+<div class="res"><span>Consumo mensal</span><strong id="out-kwh">—</strong></div><div class="res destaque"><span>Custo por mês</span><strong id="out-custo">—</strong></div><div class="res"><span>Custo por ano</span><strong id="out-ano">—</strong></div><div class="res"><span>Custo por hora de uso</span><strong id="out-hora">—</strong></div>
+</div>
+<p class="acoes"><button type="button" id="btn-exemplo" class="sec">Preencher com o exemplo</button> <button type="button" id="btn-imprimir" class="sec">Imprimir resultado</button></p>
+
+</section>
+<section><h2>Como o cálculo funciona</h2>
+<div class="formula">kWh por mês = potência (W) × horas por dia × dias ÷ 1000<br>Custo mensal = kWh × tarifa (R$/kWh)</div>
+<p>A conta de luz cobra energia em quilowatt-hora (kWh): 1 kWh é o consumo de um aparelho de 1.000 W ligado por uma hora. Por isso a potência em watts é multiplicada pelas horas e dividida por 1.000.</p><p>Aparelhos com termostato ou compressor, como geladeira e ar-condicionado, não funcionam na potência máxima o tempo todo. Para eles, prefira o consumo mensal em kWh informado na etiqueta de eficiência, ou meça com um medidor de tomada.</p><p>A tarifa mais fiel é a sua: divida o valor total da conta pelo consumo em kWh do mês. Assim entram impostos, bandeira tarifária e taxas, que mudam de mês a mês.</p>
+</section>
+<section><h2>Exemplo resolvido</h2>
+<p>Um chuveiro de 5.500 W usado 30 minutos por dia: 5.500 × 0,5 × 30 ÷ 1.000 = 82,5 kWh por mês. Com tarifa de R$ 0,95 por kWh, são R$ 78,38 por mês e R$ 940,50 por ano. Cada hora de banho custa R$ 5,23; reduzir o banho diário em 10 minutos economiza cerca de R$ 26 por mês.</p>
+<div class="tabelas"><table><caption>Dados do exemplo</caption><tr><td>Potência do aparelho</td><td>5.500 W</td></tr><tr><td>Horas de uso por dia</td><td>0,50 h/dia</td></tr><tr><td>Dias de uso por mês</td><td>30 dias</td></tr><tr><td>Tarifa por kWh (com impostos)</td><td>0,95 R$/kWh</td></tr></table>
+<table><caption>Resultado</caption><tr><td>Consumo mensal</td><td><strong>82,5 kWh</strong></td></tr><tr><td>Custo por mês</td><td><strong>R$ 78,38</strong></td></tr><tr><td>Custo por ano</td><td><strong>R$ 940,50</strong></td></tr><tr><td>Custo por hora de uso</td><td><strong>R$ 5,22</strong></td></tr></table></div>
+</section>
+<section><h2>Valores de referência</h2><ul class="refs"><li>Faixas típicas de potência: chuveiro elétrico de 4.500 a 7.500 W; micro-ondas de 1.000 a 1.500 W; lâmpada LED de 7 a 15 W; ventilador de 50 a 150 W. <span class="fonte">Fonte: potências usuais informadas nas etiquetas e manuais de aparelhos domésticos; confira o seu.</span></li><li>A tarifa efetiva por kWh varia por distribuidora, impostos estaduais e bandeira do mês. <span class="fonte">Fonte: sua conta de energia (valor total ÷ kWh consumidos).</span></li></ul></section>
+<section class="upsell"><h2>Relacionado: Orçamento Familiar 2027</h2><p>Para quem quer algo pronto: um mapa mês a mês de 2027 com o que entra, o que está previsto e o que sobra, incluindo IPVA, IPTU e material escolar.</p><p><a class="botao" href="/orcamento-familiar-2027/?utm_source=site&utm_medium=calc&utm_campaign=consumo-de-energia-aparelho">Conhecer o Orçamento Familiar 2027</a> <span class="miudo">R$ 37,00, pagamento único, garantia de 7 dias.</span></p></section>
+
+<section class="faq"><h2>Perguntas frequentes</h2><details><summary>Onde encontro a potência do aparelho?</summary><p>Na etiqueta colada no aparelho, na caixa ou no manual, em watts (W). Se vier em kW, multiplique por 1.000.</p></details><details><summary>Como calculo para geladeira e ar-condicionado?</summary><p>O compressor liga e desliga, então a conta pela potência superestima o gasto. Use o consumo mensal em kWh da etiqueta de eficiência ou um medidor de tomada.</p></details><details><summary>Qual tarifa usar?</summary><p>Divida o valor total da última conta pelos kWh consumidos. Isso já inclui impostos e bandeira tarifária.</p></details><details><summary>Aparelho em stand-by gasta?</summary><p>Gasta pouco, em geral de 1 a 5 W, mas são 24 horas por dia. Um aparelho com 3 W em espera consome cerca de 2,2 kWh por mês.</p></details></section>
+<section><h2>Outras calculadoras de casa e consumo</h2><ul class="lista"></ul></section>
+
+</main>
+<footer class="rodape"><div class="wrap">
+<p><a href="/">Todas as calculadoras</a> · <a href="/privacidade/">Política de Privacidade</a> · <a href="/termos/">Termos de Uso</a></p>
+<p class="miudo">Ferramentas informativas. Os resultados são estimativas e não substituem orientação profissional financeira, contábil ou jurídica.</p>
+</div></footer>
+<script>window.CALC={"entradas": ["pot", "horas", "dias", "tarifa"], "saidas": [{"id": "kwh", "expr": "pot * horas * dias / 1000", "fmt": "num", "casas": 1, "sufixo": "kWh"}, {"id": "custo", "expr": "kwh * tarifa", "fmt": "brl"}, {"id": "ano", "expr": "custo * 12", "fmt": "brl"}, {"id": "hora", "expr": "pot / 1000 * tarifa", "fmt": "brl"}], "exemplo": {"pot": 5500, "horas": 0.5, "dias": 30, "tarifa": 0.95}};</script>
+<script src="/assets/calc.js" defer></script>
+<script data-goatcounter="https://planejahome.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

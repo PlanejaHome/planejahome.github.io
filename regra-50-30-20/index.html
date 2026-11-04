@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regra 50-30-20: calculadora de orçamento pela renda</title>
+<meta name="description" content="Divida sua renda líquida em necessidades, desejos e poupança pela regra 50-30-20 e veja se seus gastos fixos cabem nos 50%.">
+<link rel="canonical" href="https://planejahome.github.io/regra-50-30-20/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Regra 50-30-20: calculadora de orçamento pela renda">
+<meta property="og:description" content="Divida sua renda líquida em necessidades, desejos e poupança pela regra 50-30-20 e veja se seus gastos fixos cabem nos 50%.">
+<meta property="og:url" content="https://planejahome.github.io/regra-50-30-20/">
+<meta property="og:locale" content="pt_BR">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora da regra 50-30-20", "url": "https://planejahome.github.io/regra-50-30-20/", "description": "Divida sua renda líquida em necessidades, desejos e poupança pela regra 50-30-20 e veja se seus gastos fixos cabem nos 50%.", "applicationCategory": "FinanceApplication", "operatingSystem": "Qualquer (navegador)", "inLanguage": "pt-BR", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "A regra 50-30-20 usa renda bruta ou líquida?", "acceptedAnswer": {"@type": "Answer", "text": "Líquida: o valor que efetivamente entra na conta depois de impostos e descontos em folha."}}, {"@type": "Question", "name": "E se meus gastos essenciais passam de 50%?", "acceptedAnswer": {"@type": "Answer", "text": "É comum em cidades com aluguel caro. Use proporções ajustadas (60-20-20, por exemplo) e procure reduzir o maior item fixo. O ponto principal é manter alguma fatia para poupança."}}, {"@type": "Question", "name": "Onde entram as parcelas de dívidas?", "acceptedAnswer": {"@type": "Answer", "text": "A parcela mínima obrigatória fica em necessidades. Qualquer valor extra para quitar mais rápido conta nos 20% de poupança e dívidas."}}, {"@type": "Question", "name": "Renda variável funciona com essa regra?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, usando como base a média dos últimos 6 a 12 meses, ou o menor valor recebido no período, para não planejar em cima de um mês excepcional."}}, {"@type": "Question", "name": "Assinaturas e delivery são necessidade ou desejo?", "acceptedAnswer": {"@type": "Answer", "text": "Em geral desejo. A pergunta-teste é: se eu cortar isso amanhã, algo essencial deixa de funcionar? Se não, vai para os 30%."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://planejahome.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Calculadora da regra 50-30-20", "item": "https://planejahome.github.io/regra-50-30-20/"}]}]</script>
+</head>
+<body>
+<header class="topo"><div class="wrap"><a class="marca" href="/">Planeja Home</a></div></header>
+<main class="wrap">
+
+<nav class="trilha"><a href="/">Início</a> › <a href="/#orcamento">Orçamento e poupança</a></nav>
+<h1>Calculadora da regra 50-30-20</h1>
+<p class="intro">Informe sua renda líquida mensal e quanto gasta hoje com o essencial. A calculadora mostra o teto de cada fatia da regra 50-30-20 e quanto falta ou sobra nas necessidades.</p>
+<section class="calc" aria-label="Calculadora">
+<form id="calc-form" onsubmit="return false">
+<label class="campo"><span>Renda líquida mensal</span><span class="entrada"><input type="number" inputmode="decimal" id="in-renda" value="4000" step="50" min="0"><span class="un">R$</span></span><small>O que cai na conta, já sem descontos.</small></label><label class="campo"><span>Gastos essenciais atuais</span><span class="entrada"><input type="number" inputmode="decimal" id="in-fixos" value="2300" step="50" min="0"><span class="un">R$</span></span><small>Moradia, mercado, contas, transporte, parcelas.</small></label>
+</form>
+<div class="resultados" aria-live="polite">
+<div class="res destaque"><span>Necessidades (50%)</span><strong id="out-nec">—</strong></div><div class="res"><span>Desejos (30%)</span><strong id="out-des">—</strong></div><div class="res"><span>Poupança e dívidas (20%)</span><strong id="out-poup">—</strong></div><div class="res"><span>Folga nas necessidades (negativo = acima do teto)</span><strong id="out-folga">—</strong></div><div class="res"><span>Essenciais em % da renda</span><strong id="out-pct">—</strong></div>
+</div>
+<p class="acoes"><button type="button" id="btn-exemplo" class="sec">Preencher com o exemplo</button> <button type="button" id="btn-imprimir" class="sec">Imprimir resultado</button></p>
+
+</section>
+<section><h2>Como o cálculo funciona</h2>
+<div class="formula">Necessidades = renda × 0,50<br>Desejos = renda × 0,30<br>Poupança = renda × 0,20<br>Folga = (renda × 0,50) − gastos essenciais</div>
+<p>A regra 50-30-20 é um ponto de partida para dividir a renda <strong>líquida</strong>: metade para o que você não pode deixar de pagar, 30% para escolhas de estilo de vida e 20% para formar reserva, investir ou acelerar o pagamento de dívidas.</p><p>O número mais útil aqui é a folga. Se os essenciais passam de 50%, a sobra para desejos e poupança encolhe automaticamente. Nesse caso, ajuste as proporções (por exemplo 60-20-20) em vez de abandonar a ideia: o importante é que a fatia de poupança exista e seja separada primeiro.</p><p>Parcelas de dívidas entram em necessidades quando são obrigatórias. Pagamentos extras para quitar antes entram nos 20%.</p>
+</section>
+<section><h2>Exemplo resolvido</h2>
+<p>Com renda líquida de R$ 4.000, o teto para necessidades é 4.000 × 0,5 = R$ 2.000. Como os essenciais somam R$ 2.300 (57,5% da renda), estão R$ 300 acima do teto. Para manter os R$ 800 de poupança, esses R$ 300 precisam sair da fatia de desejos, que cai de R$ 1.200 para R$ 900.</p>
+<div class="tabelas"><table><caption>Dados do exemplo</caption><tr><td>Renda líquida mensal</td><td>4.000 R$</td></tr><tr><td>Gastos essenciais atuais</td><td>2.300 R$</td></tr></table>
+<table><caption>Resultado</caption><tr><td>Necessidades (50%)</td><td><strong>R$ 2.000,00</strong></td></tr><tr><td>Desejos (30%)</td><td><strong>R$ 1.200,00</strong></td></tr><tr><td>Poupança e dívidas (20%)</td><td><strong>R$ 800,00</strong></td></tr><tr><td>Folga nas necessidades (negativo = acima do teto)</td><td><strong>R$ -300,00</strong></td></tr><tr><td>Essenciais em % da renda</td><td><strong>57,5%</strong></td></tr></table></div>
+</section>
+<section><h2>Valores de referência</h2><ul class="refs"><li>Divisão 50% / 30% / 20% da renda líquida. <span class="fonte">Fonte: Elizabeth Warren e Amelia Warren Tyagi, <em>All Your Worth: The Ultimate Lifetime Money Plan</em> (2005), livro que popularizou a regra.</span></li><li>Variações comuns quando o custo de moradia é alto: 60-20-20 ou 70-20-10. <span class="fonte">Fonte: adaptações usuais de planejamento financeiro pessoal; não são norma oficial.</span></li></ul></section>
+<section class="upsell"><h2>Quer ir além desta conta? Orçamento Familiar 2027</h2><p>Esta calculadora olha um mês. O app planeja os 12 meses de 2027, com previsto e real de cada mês, contas fixas com vencimentos, caixinhas para IPVA, IPTU e material escolar, gráficos, guia em PDF e um exemplo preenchido.</p><p><a class="botao" href="/orcamento-familiar-2027/?utm_source=site&utm_medium=calc&utm_campaign=regra-50-30-20">Conhecer o Orçamento Familiar 2027</a> <span class="miudo">R$ 37,00, pagamento único, garantia de 7 dias.</span></p></section>
+
+<section class="faq"><h2>Perguntas frequentes</h2><details><summary>A regra 50-30-20 usa renda bruta ou líquida?</summary><p>Líquida: o valor que efetivamente entra na conta depois de impostos e descontos em folha.</p></details><details><summary>E se meus gastos essenciais passam de 50%?</summary><p>É comum em cidades com aluguel caro. Use proporções ajustadas (60-20-20, por exemplo) e procure reduzir o maior item fixo. O ponto principal é manter alguma fatia para poupança.</p></details><details><summary>Onde entram as parcelas de dívidas?</summary><p>A parcela mínima obrigatória fica em necessidades. Qualquer valor extra para quitar mais rápido conta nos 20% de poupança e dívidas.</p></details><details><summary>Renda variável funciona com essa regra?</summary><p>Sim, usando como base a média dos últimos 6 a 12 meses, ou o menor valor recebido no período, para não planejar em cima de um mês excepcional.</p></details><details><summary>Assinaturas e delivery são necessidade ou desejo?</summary><p>Em geral desejo. A pergunta-teste é: se eu cortar isso amanhã, algo essencial deixa de funcionar? Se não, vai para os 30%.</p></details></section>
+<section><h2>Outras calculadoras de orçamento e poupança</h2><ul class="lista"><li><a href="/reserva-de-emergencia/">Calculadora de reserva de emergência</a></li><li><a href="/meta-de-poupanca/">Calculadora de meta de poupança</a></li><li><a href="/custo-em-horas-de-trabalho/">Quantas horas de trabalho custa uma compra</a></li></ul></section>
+
+</main>
+<footer class="rodape"><div class="wrap">
+<p><a href="/">Todas as calculadoras</a> · <a href="/privacidade/">Política de Privacidade</a> · <a href="/termos/">Termos de Uso</a></p>
+<p class="miudo">Ferramentas informativas. Os resultados são estimativas e não substituem orientação profissional financeira, contábil ou jurídica.</p>
+</div></footer>
+<script>window.CALC={"entradas": ["renda", "fixos"], "saidas": [{"id": "nec", "expr": "renda * 0.5", "fmt": "brl"}, {"id": "des", "expr": "renda * 0.3", "fmt": "brl"}, {"id": "poup", "expr": "renda * 0.2", "fmt": "brl"}, {"id": "folga", "expr": "nec - fixos", "fmt": "brl"}, {"id": "pct", "expr": "fixos / renda * 100", "fmt": "pct", "invalido": "informe a renda"}], "exemplo": {"renda": 4000, "fixos": 2300}};</script>
+<script src="/assets/calc.js" defer></script>
+<script data-goatcounter="https://planejahome.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

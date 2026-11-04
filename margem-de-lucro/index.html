@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de margem de lucro e markup sobre o custo</title>
+<meta name="description" content="Veja a margem de lucro sobre o preço, o markup sobre o custo e o lucro por unidade de um produto que você já vende. Confira se o preço está saudável.">
+<link rel="canonical" href="https://planejahome.github.io/margem-de-lucro/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculadora de margem de lucro e markup sobre o custo">
+<meta property="og:description" content="Veja a margem de lucro sobre o preço, o markup sobre o custo e o lucro por unidade de um produto que você já vende. Confira se o preço está saudável.">
+<meta property="og:url" content="https://planejahome.github.io/margem-de-lucro/">
+<meta property="og:locale" content="pt_BR">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de margem de lucro", "url": "https://planejahome.github.io/margem-de-lucro/", "description": "Veja a margem de lucro sobre o preço, o markup sobre o custo e o lucro por unidade de um produto que você já vende. Confira se o preço está saudável.", "applicationCategory": "FinanceApplication", "operatingSystem": "Qualquer (navegador)", "inLanguage": "pt-BR", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Margem de lucro e markup são a mesma coisa?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Margem é o lucro dividido pelo preço; markup é o lucro dividido pelo custo. Com preço R$ 150 e custo R$ 90, a margem é 40% e o markup é 66,7%."}}, {"@type": "Question", "name": "Qual é uma boa margem de lucro?", "acceptedAnswer": {"@type": "Answer", "text": "Depende do setor e do volume. O importante é que a margem pague as despesas fixas e ainda sobre lucro; a calculadora de ponto de equilíbrio ajuda a checar isso."}}, {"@type": "Question", "name": "Margem negativa, o que significa?", "acceptedAnswer": {"@type": "Answer", "text": "Que o custo é maior que o preço: cada venda dá prejuízo. Revise o custo (especialmente taxas e frete) ou reajuste o preço."}}, {"@type": "Question", "name": "Devo incluir o frete grátis no custo?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Se você paga o frete, ele é custo da venda e reduz a margem."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://planejahome.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Calculadora de margem de lucro", "item": "https://planejahome.github.io/margem-de-lucro/"}]}]</script>
+</head>
+<body>
+<header class="topo"><div class="wrap"><a class="marca" href="/">Planeja Home</a></div></header>
+<main class="wrap">
+
+<nav class="trilha"><a href="/">Início</a> › <a href="/#negocio">Precificação de pequeno negócio</a></nav>
+<h1>Calculadora de margem de lucro</h1>
+<p class="intro">Já tem preço definido? Informe o preço de venda e o custo total por unidade para ver quanto realmente sobra, em reais e em percentual.</p>
+<section class="calc" aria-label="Calculadora">
+<form id="calc-form" onsubmit="return false">
+<label class="campo"><span>Preço de venda</span><span class="entrada"><input type="number" inputmode="decimal" id="in-preco" value="150" step="0.5" min="0"><span class="un">R$</span></span></label><label class="campo"><span>Custo total por unidade</span><span class="entrada"><input type="number" inputmode="decimal" id="in-custo" value="90" step="0.5" min="0"><span class="un">R$</span></span><small>Produto + taxas + impostos + rateio das fixas.</small></label><label class="campo"><span>Unidades vendidas por mês</span><span class="entrada"><input type="number" inputmode="decimal" id="in-qtd" value="40" step="1" min="0"><span class="un">un.</span></span></label>
+</form>
+<div class="resultados" aria-live="polite">
+<div class="res"><span>Lucro por unidade</span><strong id="out-lucro">—</strong></div><div class="res destaque"><span>Margem de lucro (sobre o preço)</span><strong id="out-margem">—</strong></div><div class="res"><span>Markup (sobre o custo)</span><strong id="out-mk">—</strong></div><div class="res"><span>Lucro no mês</span><strong id="out-lucro_mes">—</strong></div>
+</div>
+<p class="acoes"><button type="button" id="btn-exemplo" class="sec">Preencher com o exemplo</button> <button type="button" id="btn-imprimir" class="sec">Imprimir resultado</button></p>
+
+</section>
+<section><h2>Como o cálculo funciona</h2>
+<div class="formula">Lucro = preço − custo<br>Margem (%) = lucro ÷ preço × 100<br>Markup (%) = lucro ÷ custo × 100</div>
+<p>Margem e markup usam o mesmo lucro, mas bases diferentes. A margem divide pelo <strong>preço</strong> e responde "quanto de cada venda é lucro". O markup divide pelo <strong>custo</strong> e responde "quanto acrescentei ao custo". O markup é sempre maior que a margem.</p><p>Confundir os dois é uma causa comum de prejuízo: quem quer 40% de margem e aplica 40% sobre o custo fica com só 28,6% de margem.</p><p>Para um retrato fiel, o custo total por unidade deve incluir taxas de venda, impostos e uma parcela das despesas fixas, e não só o preço de compra.</p>
+</section>
+<section><h2>Exemplo resolvido</h2>
+<p>Um produto vendido a R$ 150 com custo total de R$ 90 deixa R$ 60 por unidade. Margem: 60 ÷ 150 = 40%. Markup: 60 ÷ 90 = 66,7% sobre o custo. Vendendo 40 unidades no mês, o lucro é de R$ 2.400.</p>
+<div class="tabelas"><table><caption>Dados do exemplo</caption><tr><td>Preço de venda</td><td>150 R$</td></tr><tr><td>Custo total por unidade</td><td>90 R$</td></tr><tr><td>Unidades vendidas por mês</td><td>40 un.</td></tr></table>
+<table><caption>Resultado</caption><tr><td>Lucro por unidade</td><td><strong>R$ 60,00</strong></td></tr><tr><td>Margem de lucro (sobre o preço)</td><td><strong>40,0%</strong></td></tr><tr><td>Markup (sobre o custo)</td><td><strong>66,7%</strong></td></tr><tr><td>Lucro no mês</td><td><strong>R$ 2.400,00</strong></td></tr></table></div>
+</section>
+<section><h2>Valores de referência</h2><ul class="refs"><li>Conversão entre as duas medidas: markup = margem ÷ (1 − margem). Margem de 40% equivale a markup de 66,7%; margem de 20%, a markup de 25%. <span class="fonte">Fonte: relação algébrica entre margem e markup.</span></li><li>Margens variam muito por setor: revenda de alto giro tende a margens menores; serviços e produtos artesanais tendem a margens maiores. <span class="fonte">Fonte: observação geral de mercado; compare com negócios parecidos com o seu.</span></li></ul></section>
+<section class="upsell"><h2>Quer ir além desta conta? Precifica Doce</h2><p>Esta calculadora faz uma conta de cada vez. O app é para quem vende doces por encomenda: ficha técnica de cada receita, custos fixos, preço para balcão, encomenda e delivery, tabela de preços para imprimir, guia em PDF e um exemplo preenchido.</p><p><a class="botao" href="/precifica-doce/?utm_source=site&utm_medium=calc&utm_campaign=margem-de-lucro">Conhecer o Precifica Doce</a> <span class="miudo">R$ 67,00, pagamento único, garantia de 7 dias.</span></p></section>
+
+<section class="faq"><h2>Perguntas frequentes</h2><details><summary>Margem de lucro e markup são a mesma coisa?</summary><p>Não. Margem é o lucro dividido pelo preço; markup é o lucro dividido pelo custo. Com preço R$ 150 e custo R$ 90, a margem é 40% e o markup é 66,7%.</p></details><details><summary>Qual é uma boa margem de lucro?</summary><p>Depende do setor e do volume. O importante é que a margem pague as despesas fixas e ainda sobre lucro; a calculadora de ponto de equilíbrio ajuda a checar isso.</p></details><details><summary>Margem negativa, o que significa?</summary><p>Que o custo é maior que o preço: cada venda dá prejuízo. Revise o custo (especialmente taxas e frete) ou reajuste o preço.</p></details><details><summary>Devo incluir o frete grátis no custo?</summary><p>Sim. Se você paga o frete, ele é custo da venda e reduz a margem.</p></details></section>
+<section><h2>Outras calculadoras de precificação de pequeno negócio</h2><ul class="lista"><li><a href="/markup-preco-de-venda/">Calculadora de markup e preço de venda</a></li><li><a href="/ponto-de-equilibrio/">Calculadora de ponto de equilíbrio</a></li></ul></section>
+
+</main>
+<footer class="rodape"><div class="wrap">
+<p><a href="/">Todas as calculadoras</a> · <a href="/privacidade/">Política de Privacidade</a> · <a href="/termos/">Termos de Uso</a></p>
+<p class="miudo">Ferramentas informativas. Os resultados são estimativas e não substituem orientação profissional financeira, contábil ou jurídica.</p>
+</div></footer>
+<script>window.CALC={"entradas": ["preco", "custo", "qtd"], "saidas": [{"id": "lucro", "expr": "preco - custo", "fmt": "brl"}, {"id": "margem", "expr": "lucro / preco * 100", "fmt": "pct", "invalido": "informe o preço"}, {"id": "mk", "expr": "lucro / custo * 100", "fmt": "pct", "invalido": "—"}, {"id": "lucro_mes", "expr": "lucro * qtd", "fmt": "brl"}], "exemplo": {"preco": 150, "custo": 90, "qtd": 40}};</script>
+<script src="/assets/calc.js" defer></script>
+<script data-goatcounter="https://planejahome.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quantas horas de trabalho custa uma compra? Calcule</title>
+<meta name="description" content="Converta o preço de uma compra em horas e dias do seu trabalho, usando seu valor-hora real (descontando o custo de ir trabalhar).">
+<link rel="canonical" href="https://planejahome.github.io/custo-em-horas-de-trabalho/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quantas horas de trabalho custa uma compra? Calcule">
+<meta property="og:description" content="Converta o preço de uma compra em horas e dias do seu trabalho, usando seu valor-hora real (descontando o custo de ir trabalhar).">
+<meta property="og:url" content="https://planejahome.github.io/custo-em-horas-de-trabalho/">
+<meta property="og:locale" content="pt_BR">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Quantas horas de trabalho custa uma compra", "url": "https://planejahome.github.io/custo-em-horas-de-trabalho/", "description": "Converta o preço de uma compra em horas e dias do seu trabalho, usando seu valor-hora real (descontando o custo de ir trabalhar).", "applicationCategory": "FinanceApplication", "operatingSystem": "Qualquer (navegador)", "inLanguage": "pt-BR", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Devo incluir o tempo de deslocamento nas horas?", "acceptedAnswer": {"@type": "Answer", "text": "Se quiser a visão mais honesta, sim: é tempo dedicado ao trabalho que você não recebe à parte. Isso reduz o valor-hora real."}}, {"@type": "Question", "name": "Uso renda bruta ou líquida?", "acceptedAnswer": {"@type": "Answer", "text": "Líquida, que é o que sobra para pagar a compra."}}, {"@type": "Question", "name": "Funciona para quem é autônomo?", "acceptedAnswer": {"@type": "Answer", "text": "Funciona. Use a média de renda líquida dos últimos meses e as horas totais dedicadas, inclusive as não faturadas."}}, {"@type": "Question", "name": "Isso vale para compras parceladas?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Use o preço total pago (somando parcelas e juros), não só o valor da parcela."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://planejahome.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Quantas horas de trabalho custa uma compra", "item": "https://planejahome.github.io/custo-em-horas-de-trabalho/"}]}]</script>
+</head>
+<body>
+<header class="topo"><div class="wrap"><a class="marca" href="/">Planeja Home</a></div></header>
+<main class="wrap">
+
+<nav class="trilha"><a href="/">Início</a> › <a href="/#orcamento">Orçamento e poupança</a></nav>
+<h1>Quantas horas de trabalho custa uma compra</h1>
+<p class="intro">Antes de comprar, troque o preço por tempo. A calculadora acha seu valor-hora real, já descontando o que você gasta para trabalhar, e converte o preço em horas e dias.</p>
+<section class="calc" aria-label="Calculadora">
+<form id="calc-form" onsubmit="return false">
+<label class="campo"><span>Renda líquida mensal</span><span class="entrada"><input type="number" inputmode="decimal" id="in-renda" value="3500" step="50" min="0"><span class="un">R$</span></span></label><label class="campo"><span>Horas trabalhadas por semana</span><span class="entrada"><input type="number" inputmode="decimal" id="in-horas" value="44" step="1" min="0"><span class="un">h</span></span><small>Inclua o tempo de deslocamento se quiser o valor mais realista.</small></label><label class="campo"><span>Custo mensal para trabalhar</span><span class="entrada"><input type="number" inputmode="decimal" id="in-custos" value="300" step="10" min="0"><span class="un">R$</span></span><small>Transporte, refeições fora, roupas de trabalho.</small></label><label class="campo"><span>Preço da compra</span><span class="entrada"><input type="number" inputmode="decimal" id="in-preco" value="1200" step="10" min="0"><span class="un">R$</span></span></label>
+</form>
+<div class="resultados" aria-live="polite">
+<div class="res"><span>Horas por mês</span><strong id="out-horas_mes">—</strong></div><div class="res"><span>Seu valor-hora real</span><strong id="out-vh">—</strong></div><div class="res destaque"><span>Horas de trabalho para pagar</span><strong id="out-h_item">—</strong></div><div class="res"><span>Dias úteis de trabalho (semana de 5 dias)</span><strong id="out-dias">—</strong></div>
+</div>
+<p class="acoes"><button type="button" id="btn-exemplo" class="sec">Preencher com o exemplo</button> <button type="button" id="btn-imprimir" class="sec">Imprimir resultado</button></p>
+
+</section>
+<section><h2>Como o cálculo funciona</h2>
+<div class="formula">Horas por mês = horas semanais × 52 ÷ 12<br>Valor-hora real = (renda − custos para trabalhar) ÷ horas por mês<br>Horas da compra = preço ÷ valor-hora real<br>Dias = horas da compra ÷ (horas semanais ÷ 5)</div>
+<p>O valor-hora "real" é menor do que o salário dividido pelas horas, porque parte do que você recebe vai para custear o próprio trabalho: passagem, combustível, almoço fora. Descontar esses custos mostra quanto cada hora realmente rende para você.</p><p>Usar 52 semanas ÷ 12 meses (4,33 semanas por mês) evita subestimar as horas trabalhadas.</p><p>A ideia não é proibir compras, e sim dar uma régua pessoal: R$ 1.200 parecem uma coisa; oito dias inteiros de trabalho parecem outra.</p>
+</section>
+<section><h2>Exemplo resolvido</h2>
+<p>44 horas semanais equivalem a 44 × 52 ÷ 12 = 190,7 horas por mês. Descontando R$ 300 de custos, sobram R$ 3.200, ou R$ 16,78 por hora. Uma compra de R$ 1.200 custa 1.200 ÷ 16,78 = 71,5 horas, que em jornadas de 8,8 h (44 ÷ 5) são pouco mais de 8 dias úteis.</p>
+<div class="tabelas"><table><caption>Dados do exemplo</caption><tr><td>Renda líquida mensal</td><td>3.500 R$</td></tr><tr><td>Horas trabalhadas por semana</td><td>44 h</td></tr><tr><td>Custo mensal para trabalhar</td><td>300 R$</td></tr><tr><td>Preço da compra</td><td>1.200 R$</td></tr></table>
+<table><caption>Resultado</caption><tr><td>Horas por mês</td><td><strong>190,7 h</strong></td></tr><tr><td>Seu valor-hora real</td><td><strong>R$ 16,78</strong></td></tr><tr><td>Horas de trabalho para pagar</td><td><strong>71,5 h</strong></td></tr><tr><td>Dias úteis de trabalho (semana de 5 dias)</td><td><strong>8,1 dias</strong></td></tr></table></div>
+</section>
+<section><h2>Valores de referência</h2><ul class="refs"><li>Jornada máxima de 44 horas semanais para empregados. <span class="fonte">Fonte: Constituição Federal, art. 7º, XIII.</span></li><li>Mês médio de 4,33 semanas (52 ÷ 12). <span class="fonte">Fonte: calendário; mesma base usada em cálculos de horas mensais.</span></li></ul></section>
+<section class="upsell"><h2>Relacionado: Orçamento Familiar 2027</h2><p>Para quem quer algo pronto: um mapa mês a mês de 2027 com o que entra, o que está previsto e o que sobra, incluindo IPVA, IPTU e material escolar.</p><p><a class="botao" href="/orcamento-familiar-2027/?utm_source=site&utm_medium=calc&utm_campaign=custo-em-horas-de-trabalho">Conhecer o Orçamento Familiar 2027</a> <span class="miudo">R$ 37,00, pagamento único, garantia de 7 dias.</span></p></section>
+
+<section class="faq"><h2>Perguntas frequentes</h2><details><summary>Devo incluir o tempo de deslocamento nas horas?</summary><p>Se quiser a visão mais honesta, sim: é tempo dedicado ao trabalho que você não recebe à parte. Isso reduz o valor-hora real.</p></details><details><summary>Uso renda bruta ou líquida?</summary><p>Líquida, que é o que sobra para pagar a compra.</p></details><details><summary>Funciona para quem é autônomo?</summary><p>Funciona. Use a média de renda líquida dos últimos meses e as horas totais dedicadas, inclusive as não faturadas.</p></details><details><summary>Isso vale para compras parceladas?</summary><p>Sim. Use o preço total pago (somando parcelas e juros), não só o valor da parcela.</p></details></section>
+<section><h2>Outras calculadoras de orçamento e poupança</h2><ul class="lista"><li><a href="/regra-50-30-20/">Calculadora da regra 50-30-20</a></li><li><a href="/reserva-de-emergencia/">Calculadora de reserva de emergência</a></li><li><a href="/meta-de-poupanca/">Calculadora de meta de poupança</a></li></ul></section>
+
+</main>
+<footer class="rodape"><div class="wrap">
+<p><a href="/">Todas as calculadoras</a> · <a href="/privacidade/">Política de Privacidade</a> · <a href="/termos/">Termos de Uso</a></p>
+<p class="miudo">Ferramentas informativas. Os resultados são estimativas e não substituem orientação profissional financeira, contábil ou jurídica.</p>
+</div></footer>
+<script>window.CALC={"entradas": ["renda", "horas", "custos", "preco"], "saidas": [{"id": "horas_mes", "expr": "horas * 52 / 12", "fmt": "num", "casas": 1, "sufixo": "h"}, {"id": "vh", "expr": "(renda - custos) / horas_mes", "fmt": "brl", "invalido": "informe as horas"}, {"id": "h_item", "expr": "preco / vh", "fmt": "num", "casas": 1, "sufixo": "h", "invalido": "—"}, {"id": "dias", "expr": "h_item / (horas / 5)", "fmt": "num", "casas": 1, "sufixo": "dias", "invalido": "—"}], "exemplo": {"renda": 3500, "horas": 44, "custos": 300, "preco": 1200}};</script>
+<script src="/assets/calc.js" defer></script>
+<script data-goatcounter="https://planejahome.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

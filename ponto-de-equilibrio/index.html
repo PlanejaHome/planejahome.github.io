@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ponto de equilíbrio: quantas vendas para pagar as contas</title>
+<meta name="description" content="Descubra quantas unidades precisa vender por mês e qual faturamento mínimo cobre os custos fixos do seu negócio, com margem de contribuição.">
+<link rel="canonical" href="https://planejahome.github.io/ponto-de-equilibrio/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ponto de equilíbrio: quantas vendas para pagar as contas">
+<meta property="og:description" content="Descubra quantas unidades precisa vender por mês e qual faturamento mínimo cobre os custos fixos do seu negócio, com margem de contribuição.">
+<meta property="og:url" content="https://planejahome.github.io/ponto-de-equilibrio/">
+<meta property="og:locale" content="pt_BR">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de ponto de equilíbrio", "url": "https://planejahome.github.io/ponto-de-equilibrio/", "description": "Descubra quantas unidades precisa vender por mês e qual faturamento mínimo cobre os custos fixos do seu negócio, com margem de contribuição.", "applicationCategory": "FinanceApplication", "operatingSystem": "Qualquer (navegador)", "inLanguage": "pt-BR", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "O que entra em custo fixo e em custo variável?", "acceptedAnswer": {"@type": "Answer", "text": "Fixo é o que você paga mesmo sem vender nada (aluguel, pró-labore, sistemas). Variável é o que aumenta a cada venda (mercadoria, embalagem, taxa do cartão, imposto sobre a venda)."}}, {"@type": "Question", "name": "Pró-labore é custo fixo?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Inclua a retirada mensal do dono; caso contrário, o negócio parece empatar enquanto você trabalha de graça."}}, {"@type": "Question", "name": "Tenho vários produtos com preços diferentes. Como faço?", "acceptedAnswer": {"@type": "Answer", "text": "Use a margem de contribuição percentual média: faturamento de equilíbrio = custos fixos ÷ (margem média ÷ 100)."}}, {"@type": "Question", "name": "Como baixar o ponto de equilíbrio?", "acceptedAnswer": {"@type": "Answer", "text": "Há três alavancas: reduzir custos fixos, reduzir o custo variável unitário ou aumentar o preço. Pequenas mudanças na margem de contribuição mudam muito o resultado."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://planejahome.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Calculadora de ponto de equilíbrio", "item": "https://planejahome.github.io/ponto-de-equilibrio/"}]}]</script>
+</head>
+<body>
+<header class="topo"><div class="wrap"><a class="marca" href="/">Planeja Home</a></div></header>
+<main class="wrap">
+
+<nav class="trilha"><a href="/">Início</a> › <a href="/#negocio">Precificação de pequeno negócio</a></nav>
+<h1>Calculadora de ponto de equilíbrio</h1>
+<p class="intro">O ponto de equilíbrio é o volume de vendas em que o negócio não tem lucro nem prejuízo. Abaixo dele, cada mês fecha no vermelho.</p>
+<section class="calc" aria-label="Calculadora">
+<form id="calc-form" onsubmit="return false">
+<label class="campo"><span>Custos fixos mensais</span><span class="entrada"><input type="number" inputmode="decimal" id="in-fixos" value="6000" step="100" min="0"><span class="un">R$</span></span><small>Aluguel, pró-labore, contador, sistemas, internet.</small></label><label class="campo"><span>Preço de venda unitário</span><span class="entrada"><input type="number" inputmode="decimal" id="in-preco" value="50" step="0.5" min="0"><span class="un">R$</span></span></label><label class="campo"><span>Custo variável por unidade</span><span class="entrada"><input type="number" inputmode="decimal" id="in-cv" value="30" step="0.5" min="0"><span class="un">R$</span></span><small>Produto, embalagem, taxas e impostos da venda.</small></label>
+</form>
+<div class="resultados" aria-live="polite">
+<div class="res"><span>Margem de contribuição por unidade</span><strong id="out-mc">—</strong></div><div class="res"><span>Margem de contribuição (%)</span><strong id="out-mcp">—</strong></div><div class="res destaque"><span>Unidades por mês para empatar</span><strong id="out-qtd">—</strong></div><div class="res"><span>Faturamento mínimo mensal</span><strong id="out-fat">—</strong></div><div class="res"><span>Vendas por dia (mês de 26 dias úteis)</span><strong id="out-dia">—</strong></div>
+</div>
+<p class="acoes"><button type="button" id="btn-exemplo" class="sec">Preencher com o exemplo</button> <button type="button" id="btn-imprimir" class="sec">Imprimir resultado</button></p>
+
+</section>
+<section><h2>Como o cálculo funciona</h2>
+<div class="formula">Margem de contribuição = preço − custo variável unitário<br>Ponto de equilíbrio (unidades) = custos fixos ÷ margem de contribuição<br>Faturamento de equilíbrio = unidades × preço</div>
+<p>Cada venda gera uma <strong>margem de contribuição</strong>: o que sobra do preço depois de pagar o custo variável daquela unidade. Essa sobra vai primeiro para pagar os custos fixos; só depois que eles estão cobertos começa o lucro.</p><p>O ponto de equilíbrio é arredondado para cima, porque não se vende fração de unidade. Dividir por dias de funcionamento transforma a meta mensal em uma meta diária fácil de acompanhar.</p><p>Se você vende vários produtos, use o preço e o custo variável médios, ou calcule pelo percentual: faturamento de equilíbrio = custos fixos ÷ margem de contribuição percentual.</p>
+</section>
+<section><h2>Exemplo resolvido</h2>
+<p>Vendendo a R$ 50 com custo variável de R$ 30, cada unidade contribui com R$ 20 (40% do preço). Para cobrir R$ 6.000 de custos fixos: 6.000 ÷ 20 = 300 unidades por mês, ou R$ 15.000 de faturamento. Em 26 dias de funcionamento, são cerca de 11,5 vendas por dia. A partir da 301ª unidade, cada venda deixa R$ 20 de lucro.</p>
+<div class="tabelas"><table><caption>Dados do exemplo</caption><tr><td>Custos fixos mensais</td><td>6.000 R$</td></tr><tr><td>Preço de venda unitário</td><td>50 R$</td></tr><tr><td>Custo variável por unidade</td><td>30 R$</td></tr></table>
+<table><caption>Resultado</caption><tr><td>Margem de contribuição por unidade</td><td><strong>R$ 20,00</strong></td></tr><tr><td>Margem de contribuição (%)</td><td><strong>40,0%</strong></td></tr><tr><td>Unidades por mês para empatar</td><td><strong>300 un.</strong></td></tr><tr><td>Faturamento mínimo mensal</td><td><strong>R$ 15.000,00</strong></td></tr><tr><td>Vendas por dia (mês de 26 dias úteis)</td><td><strong>11,5 un.</strong></td></tr></table></div>
+</section>
+<section><h2>Valores de referência</h2><ul class="refs"><li>Ponto de equilíbrio contábil = custos fixos ÷ margem de contribuição unitária. <span class="fonte">Fonte: análise custo-volume-lucro, conteúdo padrão de contabilidade gerencial.</span></li><li>Um mês comercial tem em torno de 22 dias úteis (segunda a sexta) ou 26 dias (segunda a sábado). <span class="fonte">Fonte: calendário; ajuste ao seu horário de funcionamento.</span></li></ul></section>
+<section class="upsell"><h2>Relacionado: Controle Financeiro MEI</h2><p>Para quem quer algo pronto: uma planilha para ver o lucro do mês, o uso do teto do MEI e os DAS pagos ou em atraso.</p><p><a class="botao" href="/controle-financeiro-mei/?utm_source=site&utm_medium=calc&utm_campaign=ponto-de-equilibrio">Conhecer o Controle Financeiro MEI</a> <span class="miudo">R$ 37,00, pagamento único, garantia de 7 dias.</span></p></section>
+
+<section class="faq"><h2>Perguntas frequentes</h2><details><summary>O que entra em custo fixo e em custo variável?</summary><p>Fixo é o que você paga mesmo sem vender nada (aluguel, pró-labore, sistemas). Variável é o que aumenta a cada venda (mercadoria, embalagem, taxa do cartão, imposto sobre a venda).</p></details><details><summary>Pró-labore é custo fixo?</summary><p>Sim. Inclua a retirada mensal do dono; caso contrário, o negócio parece empatar enquanto você trabalha de graça.</p></details><details><summary>Tenho vários produtos com preços diferentes. Como faço?</summary><p>Use a margem de contribuição percentual média: faturamento de equilíbrio = custos fixos ÷ (margem média ÷ 100).</p></details><details><summary>Como baixar o ponto de equilíbrio?</summary><p>Há três alavancas: reduzir custos fixos, reduzir o custo variável unitário ou aumentar o preço. Pequenas mudanças na margem de contribuição mudam muito o resultado.</p></details></section>
+<section><h2>Outras calculadoras de precificação de pequeno negócio</h2><ul class="lista"><li><a href="/markup-preco-de-venda/">Calculadora de markup e preço de venda</a></li><li><a href="/margem-de-lucro/">Calculadora de margem de lucro</a></li></ul></section>
+
+</main>
+<footer class="rodape"><div class="wrap">
+<p><a href="/">Todas as calculadoras</a> · <a href="/privacidade/">Política de Privacidade</a> · <a href="/termos/">Termos de Uso</a></p>
+<p class="miudo">Ferramentas informativas. Os resultados são estimativas e não substituem orientação profissional financeira, contábil ou jurídica.</p>
+</div></footer>
+<script>window.CALC={"entradas": ["fixos", "preco", "cv"], "saidas": [{"id": "mc", "expr": "preco - cv", "fmt": "brl"}, {"id": "mcp", "expr": "mc / preco * 100", "fmt": "pct", "invalido": "—"}, {"id": "qtd", "expr": "se(mc <= 0, NaN, ceil(fixos / mc))", "fmt": "int", "sufixo": "un.", "invalido": "o preço não cobre o custo variável"}, {"id": "fat", "expr": "qtd * preco", "fmt": "brl", "invalido": "—"}, {"id": "dia", "expr": "qtd / 26", "fmt": "num", "casas": 1, "sufixo": "un.", "invalido": "—"}], "exemplo": {"fixos": 6000, "preco": 50, "cv": 30}};</script>
+<script src="/assets/calc.js" defer></script>
+<script data-goatcounter="https://planejahome.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

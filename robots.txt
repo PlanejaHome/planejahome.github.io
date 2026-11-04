@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_fora/
+
+Sitemap: https://planejahome.github.io/sitemap.xml

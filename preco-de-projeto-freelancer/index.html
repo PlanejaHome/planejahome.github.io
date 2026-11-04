@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Como orçar um projeto freelancer: calculadora de preço fechado</title>
+<meta name="description" content="Monte o preço fechado de um projeto freelancer com horas estimadas, valor-hora, margem para imprevistos, custos diretos e valor de sinal.">
+<link rel="canonical" href="https://planejahome.github.io/preco-de-projeto-freelancer/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Como orçar um projeto freelancer: calculadora de preço fechado">
+<meta property="og:description" content="Monte o preço fechado de um projeto freelancer com horas estimadas, valor-hora, margem para imprevistos, custos diretos e valor de sinal.">
+<meta property="og:url" content="https://planejahome.github.io/preco-de-projeto-freelancer/">
+<meta property="og:locale" content="pt_BR">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de orçamento de projeto freelancer", "url": "https://planejahome.github.io/preco-de-projeto-freelancer/", "description": "Monte o preço fechado de um projeto freelancer com horas estimadas, valor-hora, margem para imprevistos, custos diretos e valor de sinal.", "applicationCategory": "FinanceApplication", "operatingSystem": "Qualquer (navegador)", "inLanguage": "pt-BR", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Preço fechado ou por hora?", "acceptedAnswer": {"@type": "Answer", "text": "Preço fechado é mais fácil de vender e premia sua eficiência; por hora é mais seguro quando o escopo é incerto. Esta calculadora ajuda a transformar horas em preço fechado."}}, {"@type": "Question", "name": "Quantas revisões incluir?", "acceptedAnswer": {"@type": "Answer", "text": "Defina um número no contrato (duas é comum) e cobre as extras por hora. A margem cobre ajustes pequenos, não mudanças de escopo."}}, {"@type": "Question", "name": "Devo mostrar as horas ao cliente?", "acceptedAnswer": {"@type": "Answer", "text": "Não é obrigatório. Muitos profissionais apresentam o preço por entrega e guardam a conta de horas para controle próprio."}}, {"@type": "Question", "name": "E se eu errar a estimativa?", "acceptedAnswer": {"@type": "Answer", "text": "Registre as horas reais de cada projeto e compare com o estimado. Depois de alguns projetos, você terá uma margem calibrada para o seu tipo de trabalho."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://planejahome.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Calculadora de orçamento de projeto freelancer", "item": "https://planejahome.github.io/preco-de-projeto-freelancer/"}]}]</script>
+</head>
+<body>
+<header class="topo"><div class="wrap"><a class="marca" href="/">Planeja Home</a></div></header>
+<main class="wrap">
+
+<nav class="trilha"><a href="/">Início</a> › <a href="/#freelancer">Autônomo e freelancer</a></nav>
+<h1>Calculadora de orçamento de projeto freelancer</h1>
+<p class="intro">Para propostas de preço fechado. Estime as horas, aplique uma margem para revisões e imprevistos e some os custos que o projeto gera (fontes, banco de imagens, deslocamento).</p>
+<section class="calc" aria-label="Calculadora">
+<form id="calc-form" onsubmit="return false">
+<label class="campo"><span>Horas estimadas</span><span class="entrada"><input type="number" inputmode="decimal" id="in-horas" value="30" step="1" min="0"><span class="un">h</span></span></label><label class="campo"><span>Seu valor-hora</span><span class="entrada"><input type="number" inputmode="decimal" id="in-vh" value="80" step="5" min="0"><span class="un">R$/h</span></span></label><label class="campo"><span>Margem para imprevistos e revisões</span><span class="entrada"><input type="number" inputmode="decimal" id="in-margem" value="20" step="5" min="0"><span class="un">%</span></span></label><label class="campo"><span>Custos diretos do projeto</span><span class="entrada"><input type="number" inputmode="decimal" id="in-diretos" value="150" step="10" min="0"><span class="un">R$</span></span></label><label class="campo"><span>Sinal na aprovação</span><span class="entrada"><input type="number" inputmode="decimal" id="in-sinal" value="50" step="5" min="0"><span class="un">%</span></span></label>
+</form>
+<div class="resultados" aria-live="polite">
+<div class="res"><span>Horas com margem</span><strong id="out-haj">—</strong></div><div class="res destaque"><span>Preço do projeto</span><strong id="out-preco">—</strong></div><div class="res"><span>Valor do sinal</span><strong id="out-sinal_v">—</strong></div><div class="res"><span>Saldo na entrega</span><strong id="out-saldo">—</strong></div>
+</div>
+<p class="acoes"><button type="button" id="btn-exemplo" class="sec">Preencher com o exemplo</button> <button type="button" id="btn-imprimir" class="sec">Imprimir resultado</button></p>
+
+</section>
+<section><h2>Como o cálculo funciona</h2>
+<div class="formula">Horas com margem = horas estimadas × (1 + margem%)<br>Preço = horas com margem × valor-hora + custos diretos<br>Sinal = preço × sinal%</div>
+<p>Projetos quase sempre levam mais tempo do que o estimado: reuniões, ajustes, revisões e esperas por material do cliente. A margem de imprevistos protege seu valor-hora real. Projetos novos ou clientes desconhecidos pedem margem maior.</p><p>Custos diretos são os que só existem por causa daquele projeto (licença de uma fonte, imagens, impressão, deslocamento). Eles entram sem margem, pelo valor de custo, ou com uma pequena taxa de gestão se você preferir.</p><p>Pedir sinal na aprovação reduz o risco de calote e confirma o compromisso do cliente. Divida o pagamento em etapas em projetos longos.</p>
+</section>
+<section><h2>Exemplo resolvido</h2>
+<p>Um projeto estimado em 30 horas, com 20% de margem, vira 30 × 1,2 = 36 horas. A R$ 80 por hora são R$ 2.880, mais R$ 150 de custos diretos: preço de R$ 3.030. Com 50% de sinal, o cliente paga R$ 1.515 na aprovação e R$ 1.515 na entrega.</p>
+<div class="tabelas"><table><caption>Dados do exemplo</caption><tr><td>Horas estimadas</td><td>30 h</td></tr><tr><td>Seu valor-hora</td><td>80 R$/h</td></tr><tr><td>Margem para imprevistos e revisões</td><td>20 %</td></tr><tr><td>Custos diretos do projeto</td><td>150 R$</td></tr><tr><td>Sinal na aprovação</td><td>50 %</td></tr></table>
+<table><caption>Resultado</caption><tr><td>Horas com margem</td><td><strong>36,0 h</strong></td></tr><tr><td>Preço do projeto</td><td><strong>R$ 3.030,00</strong></td></tr><tr><td>Valor do sinal</td><td><strong>R$ 1.515,00</strong></td></tr><tr><td>Saldo na entrega</td><td><strong>R$ 1.515,00</strong></td></tr></table></div>
+</section>
+<section><h2>Valores de referência</h2><ul class="refs"><li>Margens de 10% a 30% sobre as horas estimadas são comuns; acima disso, vale detalhar melhor o escopo. <span class="fonte">Fonte: prática de orçamento de projetos (reserva de contingência em gestão de projetos).</span></li><li>Sinal de 30% a 50% na aprovação é a faixa mais usada por prestadores independentes. <span class="fonte">Fonte: prática de mercado de serviços criativos e de tecnologia; defina em contrato.</span></li></ul></section>
+<section class="upsell"><h2>Relacionado: Orçamento e Recibo</h2><p>Para quem quer algo pronto: gerador de orçamento e recibo em A4 com numeração automática e valor por extenso.</p><p><a class="botao" href="/orcamento-e-recibo/?utm_source=site&utm_medium=calc&utm_campaign=preco-de-projeto-freelancer">Conhecer o Orçamento e Recibo</a> <span class="miudo">R$ 27,00, pagamento único, garantia de 7 dias.</span></p></section>
+
+<section class="faq"><h2>Perguntas frequentes</h2><details><summary>Preço fechado ou por hora?</summary><p>Preço fechado é mais fácil de vender e premia sua eficiência; por hora é mais seguro quando o escopo é incerto. Esta calculadora ajuda a transformar horas em preço fechado.</p></details><details><summary>Quantas revisões incluir?</summary><p>Defina um número no contrato (duas é comum) e cobre as extras por hora. A margem cobre ajustes pequenos, não mudanças de escopo.</p></details><details><summary>Devo mostrar as horas ao cliente?</summary><p>Não é obrigatório. Muitos profissionais apresentam o preço por entrega e guardam a conta de horas para controle próprio.</p></details><details><summary>E se eu errar a estimativa?</summary><p>Registre as horas reais de cada projeto e compare com o estimado. Depois de alguns projetos, você terá uma margem calibrada para o seu tipo de trabalho.</p></details></section>
+<section><h2>Outras calculadoras de autônomo e freelancer</h2><ul class="lista"><li><a href="/valor-hora-freelancer/">Calculadora de valor-hora para freelancer e autônomo</a></li><li><a href="/decimo-terceiro-e-ferias-autonomo/">Calculadora de 13º e férias para autônomo</a></li></ul></section>
+
+</main>
+<footer class="rodape"><div class="wrap">
+<p><a href="/">Todas as calculadoras</a> · <a href="/privacidade/">Política de Privacidade</a> · <a href="/termos/">Termos de Uso</a></p>
+<p class="miudo">Ferramentas informativas. Os resultados são estimativas e não substituem orientação profissional financeira, contábil ou jurídica.</p>
+</div></footer>
+<script>window.CALC={"entradas": ["horas", "vh", "margem", "diretos", "sinal"], "saidas": [{"id": "haj", "expr": "horas * (1 + margem / 100)", "fmt": "num", "casas": 1, "sufixo": "h"}, {"id": "preco", "expr": "haj * vh + diretos", "fmt": "brl"}, {"id": "sinal_v", "expr": "preco * sinal / 100", "fmt": "brl"}, {"id": "saldo", "expr": "preco - sinal_v", "fmt": "brl"}], "exemplo": {"horas": 30, "vh": 80, "margem": 20, "diretos": 150, "sinal": 50}};</script>
+<script src="/assets/calc.js" defer></script>
+<script data-goatcounter="https://planejahome.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

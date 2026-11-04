@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reserva de emergência: calcule o valor ideal e o prazo</title>
+<meta name="description" content="Calcule quanto precisa ter de reserva de emergência pelo seu custo de vida, quanto falta e em quantos meses chega guardando um valor fixo.">
+<link rel="canonical" href="https://planejahome.github.io/reserva-de-emergencia/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reserva de emergência: calcule o valor ideal e o prazo">
+<meta property="og:description" content="Calcule quanto precisa ter de reserva de emergência pelo seu custo de vida, quanto falta e em quantos meses chega guardando um valor fixo.">
+<meta property="og:url" content="https://planejahome.github.io/reserva-de-emergencia/">
+<meta property="og:locale" content="pt_BR">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de reserva de emergência", "url": "https://planejahome.github.io/reserva-de-emergencia/", "description": "Calcule quanto precisa ter de reserva de emergência pelo seu custo de vida, quanto falta e em quantos meses chega guardando um valor fixo.", "applicationCategory": "FinanceApplication", "operatingSystem": "Qualquer (navegador)", "inLanguage": "pt-BR", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quantos meses de reserva eu preciso?", "acceptedAnswer": {"@type": "Answer", "text": "Depende da segurança da renda. Emprego estável: 3 a 6 meses. Renda variável, autônomo ou única renda da família: 6 a 12 meses."}}, {"@type": "Question", "name": "Devo quitar dívidas antes de montar a reserva?", "acceptedAnswer": {"@type": "Answer", "text": "Muitas pessoas montam primeiro uma reserva pequena (um mês de gastos) e depois atacam as dívidas de juros altos, para não voltar ao crédito no primeiro imprevisto."}}, {"@type": "Question", "name": "Uso a renda ou os gastos no cálculo?", "acceptedAnswer": {"@type": "Answer", "text": "Os gastos essenciais. Usar a renda superestima a meta e pode tornar o objetivo desanimador."}}, {"@type": "Question", "name": "Por que a calculadora não usa juros?", "acceptedAnswer": {"@type": "Answer", "text": "Para o plano não depender de rendimento. Se a aplicação render, você chega antes do prazo mostrado."}}, {"@type": "Question", "name": "Usei parte da reserva. E agora?", "acceptedAnswer": {"@type": "Answer", "text": "Ela serve para isso. Recalcule com o novo valor guardado e retome o aporte mensal até completar de novo."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://planejahome.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Calculadora de reserva de emergência", "item": "https://planejahome.github.io/reserva-de-emergencia/"}]}]</script>
+</head>
+<body>
+<header class="topo"><div class="wrap"><a class="marca" href="/">Planeja Home</a></div></header>
+<main class="wrap">
+
+<nav class="trilha"><a href="/">Início</a> › <a href="/#orcamento">Orçamento e poupança</a></nav>
+<h1>Calculadora de reserva de emergência</h1>
+<p class="intro">A reserva de emergência cobre meses de custo de vida se a renda parar ou surgir um imprevisto. Informe seu gasto mensal, quantos meses quer cobrir e quanto consegue guardar.</p>
+<section class="calc" aria-label="Calculadora">
+<form id="calc-form" onsubmit="return false">
+<label class="campo"><span>Custo de vida mensal</span><span class="entrada"><input type="number" inputmode="decimal" id="in-gasto" value="3000" step="50" min="0"><span class="un">R$</span></span><small>Só o essencial, não a renda.</small></label><label class="campo"><span>Meses de cobertura</span><span class="entrada"><input type="number" inputmode="decimal" id="in-meses" value="6" step="1" min="0"><span class="un">meses</span></span></label><label class="campo"><span>Já tenho guardado</span><span class="entrada"><input type="number" inputmode="decimal" id="in-guardado" value="4000" step="50" min="0"><span class="un">R$</span></span></label><label class="campo"><span>Consigo guardar por mês</span><span class="entrada"><input type="number" inputmode="decimal" id="in-aporte" value="800" step="50" min="0"><span class="un">R$</span></span></label>
+</form>
+<div class="resultados" aria-live="polite">
+<div class="res destaque"><span>Reserva ideal</span><strong id="out-meta">—</strong></div><div class="res"><span>Quanto falta</span><strong id="out-falta">—</strong></div><div class="res"><span>Meses para completar</span><strong id="out-prazo">—</strong></div><div class="res"><span>Cobertura atual</span><strong id="out-cobertura">—</strong></div>
+</div>
+<p class="acoes"><button type="button" id="btn-exemplo" class="sec">Preencher com o exemplo</button> <button type="button" id="btn-imprimir" class="sec">Imprimir resultado</button></p>
+
+</section>
+<section><h2>Como o cálculo funciona</h2>
+<div class="formula">Reserva ideal = custo de vida mensal × meses de cobertura<br>Falta = reserva ideal − já guardado<br>Prazo = falta ÷ aporte mensal (arredondado para cima)</div>
+<p>A base do cálculo é o <strong>custo de vida essencial</strong>, não a renda: numa emergência você corta lazer e compras, mas continua pagando moradia, mercado, contas e parcelas.</p><p>O número de meses depende da estabilidade da renda. Quem tem salário fixo e estável costuma mirar 3 a 6 meses; autônomos, freelancers e quem tem dependentes costumam mirar 6 a 12.</p><p>O prazo não considera rendimento, de propósito: a reserva deve ficar em aplicação de baixo risco e resgate rápido, e qualquer rendimento só encurta o prazo. Assim o plano não depende de taxa nenhuma.</p>
+</section>
+<section><h2>Exemplo resolvido</h2>
+<p>Com custo de vida de R$ 3.000 e meta de 6 meses, a reserva ideal é R$ 18.000. Já existem R$ 4.000 (cerca de 1,3 mês de cobertura), então faltam R$ 14.000. Guardando R$ 800 por mês: 14.000 ÷ 800 = 17,5, ou seja, 18 meses para completar.</p>
+<div class="tabelas"><table><caption>Dados do exemplo</caption><tr><td>Custo de vida mensal</td><td>3.000 R$</td></tr><tr><td>Meses de cobertura</td><td>6 meses</td></tr><tr><td>Já tenho guardado</td><td>4.000 R$</td></tr><tr><td>Consigo guardar por mês</td><td>800 R$</td></tr></table>
+<table><caption>Resultado</caption><tr><td>Reserva ideal</td><td><strong>R$ 18.000,00</strong></td></tr><tr><td>Quanto falta</td><td><strong>R$ 14.000,00</strong></td></tr><tr><td>Meses para completar</td><td><strong>18 meses</strong></td></tr><tr><td>Cobertura atual</td><td><strong>1,3 meses</strong></td></tr></table></div>
+</section>
+<section><h2>Valores de referência</h2><ul class="refs"><li>3 a 6 meses de despesas para renda estável; 6 a 12 meses para renda variável ou autônomos. <span class="fonte">Fonte: recomendação usual de educação financeira pessoal; ajuste ao seu caso.</span></li><li>Liquidez diária e baixo risco são as características buscadas no lugar onde a reserva fica guardada. <span class="fonte">Fonte: conceito geral de reserva de emergência em finanças pessoais.</span></li></ul></section>
+<section class="upsell"><h2>Quer ir além desta conta? Orçamento Familiar 2027</h2><p>Esta calculadora olha um mês. O app planeja os 12 meses de 2027, com previsto e real de cada mês, contas fixas com vencimentos, caixinhas para IPVA, IPTU e material escolar, gráficos, guia em PDF e um exemplo preenchido.</p><p><a class="botao" href="/orcamento-familiar-2027/?utm_source=site&utm_medium=calc&utm_campaign=reserva-de-emergencia">Conhecer o Orçamento Familiar 2027</a> <span class="miudo">R$ 37,00, pagamento único, garantia de 7 dias.</span></p></section>
+
+<section class="faq"><h2>Perguntas frequentes</h2><details><summary>Quantos meses de reserva eu preciso?</summary><p>Depende da segurança da renda. Emprego estável: 3 a 6 meses. Renda variável, autônomo ou única renda da família: 6 a 12 meses.</p></details><details><summary>Devo quitar dívidas antes de montar a reserva?</summary><p>Muitas pessoas montam primeiro uma reserva pequena (um mês de gastos) e depois atacam as dívidas de juros altos, para não voltar ao crédito no primeiro imprevisto.</p></details><details><summary>Uso a renda ou os gastos no cálculo?</summary><p>Os gastos essenciais. Usar a renda superestima a meta e pode tornar o objetivo desanimador.</p></details><details><summary>Por que a calculadora não usa juros?</summary><p>Para o plano não depender de rendimento. Se a aplicação render, você chega antes do prazo mostrado.</p></details><details><summary>Usei parte da reserva. E agora?</summary><p>Ela serve para isso. Recalcule com o novo valor guardado e retome o aporte mensal até completar de novo.</p></details></section>
+<section><h2>Outras calculadoras de orçamento e poupança</h2><ul class="lista"><li><a href="/regra-50-30-20/">Calculadora da regra 50-30-20</a></li><li><a href="/meta-de-poupanca/">Calculadora de meta de poupança</a></li><li><a href="/custo-em-horas-de-trabalho/">Quantas horas de trabalho custa uma compra</a></li></ul></section>
+
+</main>
+<footer class="rodape"><div class="wrap">
+<p><a href="/">Todas as calculadoras</a> · <a href="/privacidade/">Política de Privacidade</a> · <a href="/termos/">Termos de Uso</a></p>
+<p class="miudo">Ferramentas informativas. Os resultados são estimativas e não substituem orientação profissional financeira, contábil ou jurídica.</p>
+</div></footer>
+<script>window.CALC={"entradas": ["gasto", "meses", "guardado", "aporte"], "saidas": [{"id": "meta", "expr": "gasto * meses", "fmt": "brl"}, {"id": "falta", "expr": "max(meta - guardado, 0)", "fmt": "brl"}, {"id": "prazo", "expr": "se(falta == 0, 0, ceil(falta / max(aporte, 0.000001)))", "fmt": "int", "sufixo": "meses"}, {"id": "cobertura", "expr": "guardado / gasto", "fmt": "num", "casas": 1, "sufixo": "meses", "invalido": "—"}], "exemplo": {"gasto": 3000, "meses": 6, "guardado": 4000, "aporte": 800}};</script>
+<script src="/assets/calc.js" defer></script>
+<script data-goatcounter="https://planejahome.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

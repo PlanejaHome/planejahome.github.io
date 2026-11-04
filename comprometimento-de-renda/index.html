@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comprometimento de renda: quanto das dívidas cabe no salário</title>
+<meta name="description" content="Veja qual percentual da sua renda está comprometido com parcelas e quanto ainda cabe até o limite que você definir, como os 30% usados por bancos.">
+<link rel="canonical" href="https://planejahome.github.io/comprometimento-de-renda/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Comprometimento de renda: quanto das dívidas cabe no salário">
+<meta property="og:description" content="Veja qual percentual da sua renda está comprometido com parcelas e quanto ainda cabe até o limite que você definir, como os 30% usados por bancos.">
+<meta property="og:url" content="https://planejahome.github.io/comprometimento-de-renda/">
+<meta property="og:locale" content="pt_BR">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de comprometimento de renda com dívidas", "url": "https://planejahome.github.io/comprometimento-de-renda/", "description": "Veja qual percentual da sua renda está comprometido com parcelas e quanto ainda cabe até o limite que você definir, como os 30% usados por bancos.", "applicationCategory": "FinanceApplication", "operatingSystem": "Qualquer (navegador)", "inLanguage": "pt-BR", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Qual percentual de comprometimento é aceitável?", "acceptedAnswer": {"@type": "Answer", "text": "A referência mais comum é até 30% da renda líquida. Acima de 40% o orçamento costuma ficar apertado para essenciais e imprevistos."}}, {"@type": "Question", "name": "Aluguel entra na conta?", "acceptedAnswer": {"@type": "Answer", "text": "Não nesta calculadora, que mede dívidas. Mas se você paga aluguel alto, um limite mais baixo para parcelas (20% a 25%) é mais seguro."}}, {"@type": "Question", "name": "Uso renda bruta ou líquida?", "acceptedAnswer": {"@type": "Answer", "text": "Líquida. Bancos às vezes usam a bruta, o que faz o comprometimento parecer menor do que é no seu bolso."}}, {"@type": "Question", "name": "O que fazer se passei do limite?", "acceptedAnswer": {"@type": "Answer", "text": "Liste as dívidas por taxa de juros, veja se dá para trazer alguma para uma modalidade mais barata (portabilidade) e evite novas parcelas até voltar para dentro do limite."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://planejahome.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Calculadora de comprometimento de renda com dívidas", "item": "https://planejahome.github.io/comprometimento-de-renda/"}]}]</script>
+</head>
+<body>
+<header class="topo"><div class="wrap"><a class="marca" href="/">Planeja Home</a></div></header>
+<main class="wrap">
+
+<nav class="trilha"><a href="/">Início</a> › <a href="/#dividas">Dívidas e financiamentos</a></nav>
+<h1>Calculadora de comprometimento de renda com dívidas</h1>
+<p class="intro">Some todas as parcelas mensais (financiamentos, empréstimos, cartão parcelado, carnês) e compare com a renda. Defina o limite que considera seguro.</p>
+<section class="calc" aria-label="Calculadora">
+<form id="calc-form" onsubmit="return false">
+<label class="campo"><span>Renda líquida mensal</span><span class="entrada"><input type="number" inputmode="decimal" id="in-renda" value="4500" step="50" min="0"><span class="un">R$</span></span></label><label class="campo"><span>Soma das parcelas mensais</span><span class="entrada"><input type="number" inputmode="decimal" id="in-parcelas" value="1800" step="10" min="0"><span class="un">R$</span></span></label><label class="campo"><span>Limite que você aceita</span><span class="entrada"><input type="number" inputmode="decimal" id="in-limite" value="30" step="1" min="0"><span class="un">% da renda</span></span></label>
+</form>
+<div class="resultados" aria-live="polite">
+<div class="res destaque"><span>Renda comprometida com dívidas</span><strong id="out-pct">—</strong></div><div class="res"><span>Teto de parcelas pelo limite</span><strong id="out-teto">—</strong></div><div class="res"><span>Margem disponível (negativo = acima do limite)</span><strong id="out-folga">—</strong></div><div class="res"><span>Renda livre após parcelas</span><strong id="out-sobra">—</strong></div>
+</div>
+<p class="acoes"><button type="button" id="btn-exemplo" class="sec">Preencher com o exemplo</button> <button type="button" id="btn-imprimir" class="sec">Imprimir resultado</button></p>
+
+</section>
+<section><h2>Como o cálculo funciona</h2>
+<div class="formula">Comprometimento (%) = soma das parcelas ÷ renda líquida × 100<br>Teto = renda × limite ÷ 100<br>Margem = teto − parcelas</div>
+<p>O comprometimento de renda é o principal indicador de risco de endividamento: quanto maior, menos espaço sobra para despesas essenciais e imprevistos.</p><p>Considere todas as parcelas com data fixa: financiamento de imóvel ou carro, consignado, empréstimo pessoal, compras parceladas no cartão e carnês. Não inclua contas de consumo (luz, água), que entram no orçamento normal.</p><p>Se o resultado está acima do limite, a margem negativa mostra quanto de parcela precisa ser reduzido, por renegociação, portabilidade para taxa menor ou quitação das menores.</p>
+</section>
+<section><h2>Exemplo resolvido</h2>
+<p>Com renda de R$ 4.500 e parcelas de R$ 1.800, o comprometimento é 1.800 ÷ 4.500 = 40%. O teto de 30% seria R$ 1.350, então as parcelas estão R$ 450 acima do limite. Sobram R$ 2.700 para todo o resto do mês.</p>
+<div class="tabelas"><table><caption>Dados do exemplo</caption><tr><td>Renda líquida mensal</td><td>4.500 R$</td></tr><tr><td>Soma das parcelas mensais</td><td>1.800 R$</td></tr><tr><td>Limite que você aceita</td><td>30 % da renda</td></tr></table>
+<table><caption>Resultado</caption><tr><td>Renda comprometida com dívidas</td><td><strong>40,0%</strong></td></tr><tr><td>Teto de parcelas pelo limite</td><td><strong>R$ 1.350,00</strong></td></tr><tr><td>Margem disponível (negativo = acima do limite)</td><td><strong>R$ -450,00</strong></td></tr><tr><td>Renda livre após parcelas</td><td><strong>R$ 2.700,00</strong></td></tr></table></div>
+</section>
+<section><h2>Valores de referência</h2><ul class="refs"><li>Até 30% da renda em parcelas é o limite mais usado como referência por instituições financeiras para aprovar financiamentos. <span class="fonte">Fonte: prática de análise de crédito no mercado brasileiro; cada instituição define sua política.</span></li><li>Superendividamento é a impossibilidade de pagar as dívidas de consumo sem comprometer o mínimo existencial. <span class="fonte">Fonte: Lei 14.181/2021 (Lei do Superendividamento), que alterou o Código de Defesa do Consumidor.</span></li></ul></section>
+<section class="upsell"><h2>Quer ir além desta conta? Mapa da Quitação</h2><p>Esta calculadora faz uma conta isolada. O app reúne todas as suas dívidas, mostra mês a mês quando cada uma termina e o que pagar agora, e traz guia em PDF e um exemplo preenchido.</p><p><a class="botao" href="/mapa-da-quitacao/?utm_source=site&utm_medium=calc&utm_campaign=comprometimento-de-renda">Conhecer o Mapa da Quitação</a> <span class="miudo">R$ 37,00, pagamento único, garantia de 7 dias.</span></p></section>
+
+<section class="faq"><h2>Perguntas frequentes</h2><details><summary>Qual percentual de comprometimento é aceitável?</summary><p>A referência mais comum é até 30% da renda líquida. Acima de 40% o orçamento costuma ficar apertado para essenciais e imprevistos.</p></details><details><summary>Aluguel entra na conta?</summary><p>Não nesta calculadora, que mede dívidas. Mas se você paga aluguel alto, um limite mais baixo para parcelas (20% a 25%) é mais seguro.</p></details><details><summary>Uso renda bruta ou líquida?</summary><p>Líquida. Bancos às vezes usam a bruta, o que faz o comprometimento parecer menor do que é no seu bolso.</p></details><details><summary>O que fazer se passei do limite?</summary><p>Liste as dívidas por taxa de juros, veja se dá para trazer alguma para uma modalidade mais barata (portabilidade) e evite novas parcelas até voltar para dentro do limite.</p></details></section>
+<section><h2>Outras calculadoras de dívidas e financiamentos</h2><ul class="lista"><li><a href="/parcela-de-financiamento/">Calculadora de parcela de financiamento (tabela Price)</a></li><li><a href="/juros-e-multa-por-atraso/">Calculadora de juros e multa por atraso</a></li></ul></section>
+
+</main>
+<footer class="rodape"><div class="wrap">
+<p><a href="/">Todas as calculadoras</a> · <a href="/privacidade/">Política de Privacidade</a> · <a href="/termos/">Termos de Uso</a></p>
+<p class="miudo">Ferramentas informativas. Os resultados são estimativas e não substituem orientação profissional financeira, contábil ou jurídica.</p>
+</div></footer>
+<script>window.CALC={"entradas": ["renda", "parcelas", "limite"], "saidas": [{"id": "pct", "expr": "parcelas / renda * 100", "fmt": "pct", "invalido": "informe a renda"}, {"id": "teto", "expr": "renda * limite / 100", "fmt": "brl"}, {"id": "folga", "expr": "teto - parcelas", "fmt": "brl"}, {"id": "sobra", "expr": "renda - parcelas", "fmt": "brl"}], "exemplo": {"renda": 4500, "parcelas": 1800, "limite": 30}};</script>
+<script src="/assets/calc.js" defer></script>
+<script data-goatcounter="https://planejahome.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

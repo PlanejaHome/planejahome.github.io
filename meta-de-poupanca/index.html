@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meta de poupança: quanto guardar por mês, semana e dia</title>
+<meta name="description" content="Descubra quanto guardar por mês, por semana e por dia para atingir uma meta de poupança no prazo que você escolher, como viagem ou entrada.">
+<link rel="canonical" href="https://planejahome.github.io/meta-de-poupanca/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Meta de poupança: quanto guardar por mês, semana e dia">
+<meta property="og:description" content="Descubra quanto guardar por mês, por semana e por dia para atingir uma meta de poupança no prazo que você escolher, como viagem ou entrada.">
+<meta property="og:url" content="https://planejahome.github.io/meta-de-poupanca/">
+<meta property="og:locale" content="pt_BR">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de meta de poupança", "url": "https://planejahome.github.io/meta-de-poupanca/", "description": "Descubra quanto guardar por mês, por semana e por dia para atingir uma meta de poupança no prazo que você escolher, como viagem ou entrada.", "applicationCategory": "FinanceApplication", "operatingSystem": "Qualquer (navegador)", "inLanguage": "pt-BR", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Por que o valor semanal não é o mensal dividido por 4?", "acceptedAnswer": {"@type": "Answer", "text": "Porque um mês tem em média 4,33 semanas. Dividir por 4 faria você guardar um pouco mais do que precisa."}}, {"@type": "Question", "name": "Posso ter várias metas ao mesmo tempo?", "acceptedAnswer": {"@type": "Answer", "text": "Pode. Calcule cada uma separadamente e some os valores mensais para ver se cabem no orçamento. Se não couberem, alongue o prazo da menos urgente."}}, {"@type": "Question", "name": "E se eu atrasar um mês?", "acceptedAnswer": {"@type": "Answer", "text": "Recalcule com o valor atual e o prazo restante. O novo valor mensal já distribui a diferença pelos meses que faltam."}}, {"@type": "Question", "name": "Vale guardar por dia em vez de por mês?", "acceptedAnswer": {"@type": "Answer", "text": "Para algumas pessoas o hábito diário funciona melhor. O mais prático costuma ser a transferência automática no dia em que o salário cai."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://planejahome.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Calculadora de meta de poupança", "item": "https://planejahome.github.io/meta-de-poupanca/"}]}]</script>
+</head>
+<body>
+<header class="topo"><div class="wrap"><a class="marca" href="/">Planeja Home</a></div></header>
+<main class="wrap">
+
+<nav class="trilha"><a href="/">Início</a> › <a href="/#orcamento">Orçamento e poupança</a></nav>
+<h1>Calculadora de meta de poupança</h1>
+<p class="intro">Defina o valor do objetivo (viagem, troca de carro, entrada de um imóvel), quanto já tem e em quantos meses quer chegar lá.</p>
+<section class="calc" aria-label="Calculadora">
+<form id="calc-form" onsubmit="return false">
+<label class="campo"><span>Valor da meta</span><span class="entrada"><input type="number" inputmode="decimal" id="in-meta" value="12000" step="100" min="0"><span class="un">R$</span></span></label><label class="campo"><span>Já tenho guardado</span><span class="entrada"><input type="number" inputmode="decimal" id="in-tenho" value="2000" step="100" min="0"><span class="un">R$</span></span></label><label class="campo"><span>Prazo</span><span class="entrada"><input type="number" inputmode="decimal" id="in-prazo" value="20" step="1" min="1"><span class="un">meses</span></span></label>
+</form>
+<div class="resultados" aria-live="polite">
+<div class="res"><span>Falta juntar</span><strong id="out-falta">—</strong></div><div class="res destaque"><span>Guardar por mês</span><strong id="out-mes">—</strong></div><div class="res"><span>Equivale por semana</span><strong id="out-semana">—</strong></div><div class="res"><span>Equivale por dia</span><strong id="out-dia">—</strong></div><div class="res"><span>Progresso atual</span><strong id="out-progresso">—</strong></div>
+</div>
+<p class="acoes"><button type="button" id="btn-exemplo" class="sec">Preencher com o exemplo</button> <button type="button" id="btn-imprimir" class="sec">Imprimir resultado</button></p>
+
+</section>
+<section><h2>Como o cálculo funciona</h2>
+<div class="formula">Falta = meta − já guardado<br>Por mês = falta ÷ prazo em meses<br>Por semana = por mês × 12 ÷ 52<br>Por dia = por mês × 12 ÷ 365</div>
+<p>Dividir a meta em parcelas pequenas torna o objetivo concreto. Ver que R$ 500 por mês equivalem a cerca de R$ 16 por dia ajuda a comparar com gastos do dia a dia que podem ser cortados.</p><p>A conversão para semana e dia usa o ano todo (52 semanas e 365 dias), por isso o valor semanal não é simplesmente o mensal dividido por 4.</p><p>O cálculo é feito sem rendimento para não depender de taxa. Se o dinheiro ficar aplicado, a meta é atingida antes ou com depósitos menores.</p>
+</section>
+<section><h2>Exemplo resolvido</h2>
+<p>Para uma meta de R$ 12.000 com R$ 2.000 já guardados, faltam R$ 10.000. Em 20 meses, são R$ 500 por mês. No ano, isso dá R$ 6.000, ou R$ 115,38 por semana (6.000 ÷ 52) e R$ 16,44 por dia (6.000 ÷ 365). O progresso atual é de 16,7%.</p>
+<div class="tabelas"><table><caption>Dados do exemplo</caption><tr><td>Valor da meta</td><td>12.000 R$</td></tr><tr><td>Já tenho guardado</td><td>2.000 R$</td></tr><tr><td>Prazo</td><td>20 meses</td></tr></table>
+<table><caption>Resultado</caption><tr><td>Falta juntar</td><td><strong>R$ 10.000,00</strong></td></tr><tr><td>Guardar por mês</td><td><strong>R$ 500,00</strong></td></tr><tr><td>Equivale por semana</td><td><strong>R$ 115,38</strong></td></tr><tr><td>Equivale por dia</td><td><strong>R$ 16,44</strong></td></tr><tr><td>Progresso atual</td><td><strong>16,7%</strong></td></tr></table></div>
+</section>
+<section><h2>Valores de referência</h2><ul class="refs"><li>1 ano = 52 semanas = 365 dias (366 em ano bissexto). Por isso um mês médio tem cerca de 4,33 semanas. <span class="fonte">Fonte: calendário gregoriano.</span></li><li>Metas de curto prazo (até 2 anos) costumam ficar em aplicações de baixo risco e liquidez, como a reserva. <span class="fonte">Fonte: prática comum de planejamento financeiro pessoal.</span></li></ul></section>
+<section class="upsell"><h2>Quer ir além desta conta? Planner 2027 de Metas e Hábitos</h2><p>Esta calculadora faz uma conta. O planner tem 73 páginas com metas, hábitos e orçamento de cada mês, para imprimir ou preencher no Word, mais PDF para tablet.</p><p><a class="botao" href="/planner-2027/?utm_source=site&utm_medium=calc&utm_campaign=meta-de-poupanca">Conhecer o Planner 2027 de Metas e Hábitos</a> <span class="miudo">R$ 27,00, pagamento único, garantia de 7 dias.</span></p></section>
+
+<section class="faq"><h2>Perguntas frequentes</h2><details><summary>Por que o valor semanal não é o mensal dividido por 4?</summary><p>Porque um mês tem em média 4,33 semanas. Dividir por 4 faria você guardar um pouco mais do que precisa.</p></details><details><summary>Posso ter várias metas ao mesmo tempo?</summary><p>Pode. Calcule cada uma separadamente e some os valores mensais para ver se cabem no orçamento. Se não couberem, alongue o prazo da menos urgente.</p></details><details><summary>E se eu atrasar um mês?</summary><p>Recalcule com o valor atual e o prazo restante. O novo valor mensal já distribui a diferença pelos meses que faltam.</p></details><details><summary>Vale guardar por dia em vez de por mês?</summary><p>Para algumas pessoas o hábito diário funciona melhor. O mais prático costuma ser a transferência automática no dia em que o salário cai.</p></details></section>
+<section><h2>Outras calculadoras de orçamento e poupança</h2><ul class="lista"><li><a href="/regra-50-30-20/">Calculadora da regra 50-30-20</a></li><li><a href="/reserva-de-emergencia/">Calculadora de reserva de emergência</a></li><li><a href="/custo-em-horas-de-trabalho/">Quantas horas de trabalho custa uma compra</a></li></ul></section>
+
+</main>
+<footer class="rodape"><div class="wrap">
+<p><a href="/">Todas as calculadoras</a> · <a href="/privacidade/">Política de Privacidade</a> · <a href="/termos/">Termos de Uso</a></p>
+<p class="miudo">Ferramentas informativas. Os resultados são estimativas e não substituem orientação profissional financeira, contábil ou jurídica.</p>
+</div></footer>
+<script>window.CALC={"entradas": ["meta", "tenho", "prazo"], "saidas": [{"id": "falta", "expr": "max(meta - tenho, 0)", "fmt": "brl"}, {"id": "mes", "expr": "falta / prazo", "fmt": "brl", "invalido": "informe o prazo"}, {"id": "semana", "expr": "mes * 12 / 52", "fmt": "brl", "invalido": "—"}, {"id": "dia", "expr": "mes * 12 / 365", "fmt": "brl", "invalido": "—"}, {"id": "progresso", "expr": "min(tenho / meta * 100, 100)", "fmt": "pct", "invalido": "—"}], "exemplo": {"meta": 12000, "tenho": 2000, "prazo": 20}};</script>
+<script src="/assets/calc.js" defer></script>
+<script data-goatcounter="https://planejahome.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

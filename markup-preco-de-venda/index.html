@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de markup: preço de venda a partir do custo</title>
+<meta name="description" content="Calcule o markup divisor e o preço de venda de um produto incluindo impostos, taxas de venda, despesas fixas rateadas e a margem de lucro desejada.">
+<link rel="canonical" href="https://planejahome.github.io/markup-preco-de-venda/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Calculadora de markup: preço de venda a partir do custo">
+<meta property="og:description" content="Calcule o markup divisor e o preço de venda de um produto incluindo impostos, taxas de venda, despesas fixas rateadas e a margem de lucro desejada.">
+<meta property="og:url" content="https://planejahome.github.io/markup-preco-de-venda/">
+<meta property="og:locale" content="pt_BR">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de markup e preço de venda", "url": "https://planejahome.github.io/markup-preco-de-venda/", "description": "Calcule o markup divisor e o preço de venda de um produto incluindo impostos, taxas de venda, despesas fixas rateadas e a margem de lucro desejada.", "applicationCategory": "FinanceApplication", "operatingSystem": "Qualquer (navegador)", "inLanguage": "pt-BR", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Qual a diferença entre markup e margem?", "acceptedAnswer": {"@type": "Answer", "text": "Markup é o multiplicador aplicado ao custo para chegar ao preço. Margem é o percentual do preço que vira lucro. Um markup de 2 com estes percentuais entrega margem de lucro de 20%."}}, {"@type": "Question", "name": "Como calculo o percentual de despesas fixas?", "acceptedAnswer": {"@type": "Answer", "text": "Some as despesas fixas do mês (aluguel, pró-labore, contador, sistemas) e divida pelo faturamento médio mensal. Despesas de R$ 2.800 com faturamento de R$ 20.000 dão 14%."}}, {"@type": "Question", "name": "Posso usar markup diferente por produto?", "acceptedAnswer": {"@type": "Answer", "text": "Pode e é comum. Produtos de giro rápido costumam ter markup menor; itens exclusivos ou artesanais, maior. Confira se o preço final é aceito pelo mercado."}}, {"@type": "Question", "name": "Por que não posso só somar os percentuais ao custo?", "acceptedAnswer": {"@type": "Answer", "text": "Porque impostos e taxas incidem sobre o preço final. Somar ao custo cria um preço menor do que o necessário e a margem real fica abaixo da planejada."}}, {"@type": "Question", "name": "O que é margem de contribuição?", "acceptedAnswer": {"@type": "Answer", "text": "É o preço menos custos e despesas variáveis. Ela paga as despesas fixas e o lucro; veja a calculadora de ponto de equilíbrio."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://planejahome.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Calculadora de markup e preço de venda", "item": "https://planejahome.github.io/markup-preco-de-venda/"}]}]</script>
+</head>
+<body>
+<header class="topo"><div class="wrap"><a class="marca" href="/">Planeja Home</a></div></header>
+<main class="wrap">
+
+<nav class="trilha"><a href="/">Início</a> › <a href="/#negocio">Precificação de pequeno negócio</a></nav>
+<h1>Calculadora de markup e preço de venda</h1>
+<p class="intro">Informe o custo unitário do produto e os percentuais que saem de cada venda. O markup garante que, depois de pagar tudo, sobre exatamente a margem de lucro escolhida.</p>
+<section class="calc" aria-label="Calculadora">
+<form id="calc-form" onsubmit="return false">
+<label class="campo"><span>Custo unitário do produto</span><span class="entrada"><input type="number" inputmode="decimal" id="in-custo" value="40" step="0.5" min="0"><span class="un">R$</span></span><small>Matéria-prima ou custo de compra, frete de entrada, embalagem.</small></label><label class="campo"><span>Despesas variáveis de venda</span><span class="entrada"><input type="number" inputmode="decimal" id="in-taxas" value="10" step="0.5" min="0"><span class="un">%</span></span><small>Taxa da maquininha ou da plataforma, comissão.</small></label><label class="campo"><span>Impostos sobre a venda</span><span class="entrada"><input type="number" inputmode="decimal" id="in-imp" value="6" step="0.5" min="0"><span class="un">%</span></span></label><label class="campo"><span>Despesas fixas (rateio)</span><span class="entrada"><input type="number" inputmode="decimal" id="in-fixas" value="14" step="0.5" min="0"><span class="un">% do faturamento</span></span><small>Despesas fixas mensais ÷ faturamento mensal × 100.</small></label><label class="campo"><span>Margem de lucro desejada</span><span class="entrada"><input type="number" inputmode="decimal" id="in-lucro" value="20" step="0.5" min="0"><span class="un">%</span></span></label>
+</form>
+<div class="resultados" aria-live="polite">
+<div class="res"><span>Soma dos percentuais</span><strong id="out-soma">—</strong></div><div class="res"><span>Markup divisor (multiplicador)</span><strong id="out-mk">—</strong></div><div class="res destaque"><span>Preço de venda</span><strong id="out-preco">—</strong></div><div class="res"><span>Lucro por unidade</span><strong id="out-lucro_v">—</strong></div>
+</div>
+<p class="acoes"><button type="button" id="btn-exemplo" class="sec">Preencher com o exemplo</button> <button type="button" id="btn-imprimir" class="sec">Imprimir resultado</button></p>
+
+</section>
+<section><h2>Como o cálculo funciona</h2>
+<div class="formula">Markup = 100 ÷ (100 − (despesas variáveis% + impostos% + despesas fixas% + lucro%))<br>Preço de venda = custo × markup</div>
+<p>O erro clássico é somar os percentuais ao custo (custo + 50%). Como impostos, taxas e lucro são calculados sobre o <strong>preço de venda</strong>, e não sobre o custo, somar ao custo deixa o preço baixo demais e a margem real menor que a planejada. O markup divisor resolve isso.</p><p>As despesas fixas (aluguel, pró-labore, internet, contador) entram como percentual do faturamento: divida o total mensal pelo faturamento médio do mês.</p><p>Se a soma dos percentuais chega a 100%, não existe preço que pague tudo: é preciso reduzir despesas, a margem desejada ou o custo.</p>
+</section>
+<section><h2>Exemplo resolvido</h2>
+<p>Com 10% de taxas, 6% de impostos, 14% de despesas fixas e 20% de lucro, os percentuais somam 50%. Markup = 100 ÷ (100 − 50) = 2. Um produto que custa R$ 40 deve ser vendido a R$ 80. Conferindo: de R$ 80 saem R$ 8 de taxas, R$ 4,80 de impostos e R$ 11,20 para as fixas; sobram 80 − 40 − 24 = R$ 16 de lucro, exatamente 20% do preço. Se tivesse somado 50% ao custo (preço de R$ 60), sairiam R$ 18 em taxas, impostos e fixas e o lucro seria de apenas R$ 2.</p>
+<div class="tabelas"><table><caption>Dados do exemplo</caption><tr><td>Custo unitário do produto</td><td>40 R$</td></tr><tr><td>Despesas variáveis de venda</td><td>10 %</td></tr><tr><td>Impostos sobre a venda</td><td>6 %</td></tr><tr><td>Despesas fixas (rateio)</td><td>14 % do faturamento</td></tr><tr><td>Margem de lucro desejada</td><td>20 %</td></tr></table>
+<table><caption>Resultado</caption><tr><td>Soma dos percentuais</td><td><strong>50,0%</strong></td></tr><tr><td>Markup divisor (multiplicador)</td><td><strong>2,000</strong></td></tr><tr><td>Preço de venda</td><td><strong>R$ 80,00</strong></td></tr><tr><td>Lucro por unidade</td><td><strong>R$ 16,00</strong></td></tr></table></div>
+</section>
+<section><h2>Valores de referência</h2><ul class="refs"><li>Taxas de maquininha e de plataformas de venda costumam ficar entre 2% e 15% por transação, conforme modalidade e prazo de recebimento. <span class="fonte">Fonte: faixa geral de mercado; use a taxa do seu contrato.</span></li><li>Markup divisor: método padrão de formação de preço em contabilidade de custos. <span class="fonte">Fonte: literatura de contabilidade gerencial e formação de preço de venda.</span></li></ul></section>
+<section class="upsell"><h2>Quer ir além desta conta? Precifica Doce</h2><p>Esta calculadora faz uma conta de cada vez. O app é para quem vende doces por encomenda: ficha técnica de cada receita, custos fixos, preço para balcão, encomenda e delivery, tabela de preços para imprimir, guia em PDF e um exemplo preenchido.</p><p><a class="botao" href="/precifica-doce/?utm_source=site&utm_medium=calc&utm_campaign=markup-preco-de-venda">Conhecer o Precifica Doce</a> <span class="miudo">R$ 67,00, pagamento único, garantia de 7 dias.</span></p></section>
+
+<section class="faq"><h2>Perguntas frequentes</h2><details><summary>Qual a diferença entre markup e margem?</summary><p>Markup é o multiplicador aplicado ao custo para chegar ao preço. Margem é o percentual do preço que vira lucro. Um markup de 2 com estes percentuais entrega margem de lucro de 20%.</p></details><details><summary>Como calculo o percentual de despesas fixas?</summary><p>Some as despesas fixas do mês (aluguel, pró-labore, contador, sistemas) e divida pelo faturamento médio mensal. Despesas de R$ 2.800 com faturamento de R$ 20.000 dão 14%.</p></details><details><summary>Posso usar markup diferente por produto?</summary><p>Pode e é comum. Produtos de giro rápido costumam ter markup menor; itens exclusivos ou artesanais, maior. Confira se o preço final é aceito pelo mercado.</p></details><details><summary>Por que não posso só somar os percentuais ao custo?</summary><p>Porque impostos e taxas incidem sobre o preço final. Somar ao custo cria um preço menor do que o necessário e a margem real fica abaixo da planejada.</p></details><details><summary>O que é margem de contribuição?</summary><p>É o preço menos custos e despesas variáveis. Ela paga as despesas fixas e o lucro; veja a calculadora de ponto de equilíbrio.</p></details></section>
+<section><h2>Outras calculadoras de precificação de pequeno negócio</h2><ul class="lista"><li><a href="/ponto-de-equilibrio/">Calculadora de ponto de equilíbrio</a></li><li><a href="/margem-de-lucro/">Calculadora de margem de lucro</a></li></ul></section>
+
+</main>
+<footer class="rodape"><div class="wrap">
+<p><a href="/">Todas as calculadoras</a> · <a href="/privacidade/">Política de Privacidade</a> · <a href="/termos/">Termos de Uso</a></p>
+<p class="miudo">Ferramentas informativas. Os resultados são estimativas e não substituem orientação profissional financeira, contábil ou jurídica.</p>
+</div></footer>
+<script>window.CALC={"entradas": ["custo", "taxas", "imp", "fixas", "lucro"], "saidas": [{"id": "soma", "expr": "taxas + imp + fixas + lucro", "fmt": "pct"}, {"id": "mk", "expr": "se(soma >= 100, NaN, 100 / (100 - soma))", "fmt": "num", "casas": 3, "invalido": "percentuais somam 100% ou mais"}, {"id": "preco", "expr": "custo * mk", "fmt": "brl", "invalido": "—"}, {"id": "lucro_v", "expr": "preco * lucro / 100", "fmt": "brl", "invalido": "—"}], "exemplo": {"custo": 40, "taxas": 10, "imp": 6, "fixas": 14, "lucro": 20}};</script>
+<script src="/assets/calc.js" defer></script>
+<script data-goatcounter="https://planejahome.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

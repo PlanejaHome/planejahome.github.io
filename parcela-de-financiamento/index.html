@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulador de parcela de financiamento pela tabela Price</title>
+<meta name="description" content="Simule a parcela fixa de um financiamento ou empréstimo pela tabela Price a partir do valor, da entrada, dos juros mensais e do número de parcelas.">
+<link rel="canonical" href="https://planejahome.github.io/parcela-de-financiamento/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Simulador de parcela de financiamento pela tabela Price">
+<meta property="og:description" content="Simule a parcela fixa de um financiamento ou empréstimo pela tabela Price a partir do valor, da entrada, dos juros mensais e do número de parcelas.">
+<meta property="og:url" content="https://planejahome.github.io/parcela-de-financiamento/">
+<meta property="og:locale" content="pt_BR">
+<link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculadora de parcela de financiamento (tabela Price)", "url": "https://planejahome.github.io/parcela-de-financiamento/", "description": "Simule a parcela fixa de um financiamento ou empréstimo pela tabela Price a partir do valor, da entrada, dos juros mensais e do número de parcelas.", "applicationCategory": "FinanceApplication", "operatingSystem": "Qualquer (navegador)", "inLanguage": "pt-BR", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Qual a diferença entre tabela Price e SAC?", "acceptedAnswer": {"@type": "Answer", "text": "Na Price as parcelas são iguais do início ao fim. No SAC a amortização é fixa e as parcelas começam maiores e vão caindo; o total de juros no SAC costuma ser menor."}}, {"@type": "Question", "name": "Por que a parcela do banco é diferente da calculadora?", "acceptedAnswer": {"@type": "Answer", "text": "Geralmente por causa de IOF, tarifas e seguros incluídos no valor financiado, ou porque a primeira parcela vence com mais de 30 dias. Peça o CET e a planilha de evolução do saldo."}}, {"@type": "Question", "name": "Tenho só a taxa anual. Posso usar?", "acceptedAnswer": {"@type": "Answer", "text": "Converta para mensal: (1 + anual)^(1/12) − 1. Não divida a taxa anual por 12, isso superestima a taxa mensal."}}, {"@type": "Question", "name": "Dar entrada maior compensa?", "acceptedAnswer": {"@type": "Answer", "text": "Cada real de entrada deixa de pagar juros pelo prazo todo. Compare com o que esse dinheiro deixaria de fazer (por exemplo, sua reserva de emergência) antes de decidir."}}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://planejahome.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Calculadora de parcela de financiamento (tabela Price)", "item": "https://planejahome.github.io/parcela-de-financiamento/"}]}]</script>
+</head>
+<body>
+<header class="topo"><div class="wrap"><a class="marca" href="/">Planeja Home</a></div></header>
+<main class="wrap">
+
+<nav class="trilha"><a href="/">Início</a> › <a href="/#dividas">Dívidas e financiamentos</a></nav>
+<h1>Calculadora de parcela de financiamento (tabela Price)</h1>
+<p class="intro">A tabela Price é o sistema de parcelas fixas usado na maioria dos financiamentos de veículos, eletrônicos e empréstimos pessoais. Informe o valor, a entrada, a taxa e o prazo.</p>
+<section class="calc" aria-label="Calculadora">
+<form id="calc-form" onsubmit="return false">
+<label class="campo"><span>Valor do bem ou do empréstimo</span><span class="entrada"><input type="number" inputmode="decimal" id="in-valor" value="12000" step="100" min="0"><span class="un">R$</span></span></label><label class="campo"><span>Entrada</span><span class="entrada"><input type="number" inputmode="decimal" id="in-entrada" value="2000" step="100" min="0"><span class="un">R$</span></span></label><label class="campo"><span>Juros ao mês</span><span class="entrada"><input type="number" inputmode="decimal" id="in-juros" value="1" step="0.05" min="0"><span class="un">% a.m.</span></span></label><label class="campo"><span>Número de parcelas</span><span class="entrada"><input type="number" inputmode="decimal" id="in-n" value="12" step="1" min="1"><span class="un">x</span></span></label>
+</form>
+<div class="resultados" aria-live="polite">
+<div class="res"><span>Valor financiado</span><strong id="out-fin">—</strong></div><div class="res destaque"><span>Parcela mensal</span><strong id="out-pmt">—</strong></div><div class="res"><span>Total das parcelas</span><strong id="out-total">—</strong></div><div class="res"><span>Total de juros</span><strong id="out-jt">—</strong></div><div class="res"><span>Custo total (entrada + parcelas)</span><strong id="out-custo">—</strong></div>
+</div>
+<p class="acoes"><button type="button" id="btn-exemplo" class="sec">Preencher com o exemplo</button> <button type="button" id="btn-imprimir" class="sec">Imprimir resultado</button></p>
+
+</section>
+<section><h2>Como o cálculo funciona</h2>
+<div class="formula">PMT = PV × i ÷ (1 − (1 + i)<sup>−n</sup>)<br>PV = valor financiado, i = juros ao mês (decimal), n = número de parcelas</div>
+<p>Na tabela Price todas as parcelas são iguais. No começo, a maior parte de cada parcela é juros; com o tempo, a parte que amortiza o saldo aumenta. Por isso, quitar antecipadamente no início economiza mais juros.</p><p>A fórmula vem do valor presente de uma série de pagamentos iguais: a soma das parcelas descontadas pela taxa de juros é igual ao valor financiado.</p><p>A taxa usada aqui é só a de juros. Tarifas, IOF e seguros embutidos aumentam o custo real; para comparar propostas, use o Custo Efetivo Total (CET) informado pela instituição.</p>
+</section>
+<section><h2>Exemplo resolvido</h2>
+<p>Um bem de R$ 12.000 com R$ 2.000 de entrada deixa R$ 10.000 para financiar. A 1% ao mês em 12 vezes: PMT = 10.000 × 0,01 ÷ (1 − 1,01<sup>−12</sup>) = 100 ÷ 0,11255 = R$ 888,49 por mês. As 12 parcelas somam R$ 10.661,85, ou seja, R$ 661,85 de juros.</p>
+<div class="tabelas"><table><caption>Dados do exemplo</caption><tr><td>Valor do bem ou do empréstimo</td><td>12.000 R$</td></tr><tr><td>Entrada</td><td>2.000 R$</td></tr><tr><td>Juros ao mês</td><td>1 % a.m.</td></tr><tr><td>Número de parcelas</td><td>12 x</td></tr></table>
+<table><caption>Resultado</caption><tr><td>Valor financiado</td><td><strong>R$ 10.000,00</strong></td></tr><tr><td>Parcela mensal</td><td><strong>R$ 888,49</strong></td></tr><tr><td>Total das parcelas</td><td><strong>R$ 10.661,85</strong></td></tr><tr><td>Total de juros</td><td><strong>R$ 661,85</strong></td></tr><tr><td>Custo total (entrada + parcelas)</td><td><strong>R$ 12.661,85</strong></td></tr></table></div>
+</section>
+<section><h2>Valores de referência</h2><ul class="refs"><li>Caso clássico de verificação: R$ 10.000 a 1% a.m. em 12 meses resulta em parcela de R$ 888,49. <span class="fonte">Fonte: matemática financeira, sistema francês de amortização (Price); confira em qualquer calculadora financeira (PV=10000, i=1, n=12).</span></li><li>Conversão de taxa anual para mensal: (1 + taxa anual)^(1/12) − 1. 12,68% ao ano equivalem a 1% ao mês. <span class="fonte">Fonte: equivalência de taxas em juros compostos.</span></li></ul></section>
+<section class="upsell"><h2>Quer ir além desta conta? Mapa da Quitação</h2><p>Esta calculadora faz uma conta isolada. O app reúne todas as suas dívidas, mostra mês a mês quando cada uma termina e o que pagar agora, e traz guia em PDF e um exemplo preenchido.</p><p><a class="botao" href="/mapa-da-quitacao/?utm_source=site&utm_medium=calc&utm_campaign=parcela-de-financiamento">Conhecer o Mapa da Quitação</a> <span class="miudo">R$ 37,00, pagamento único, garantia de 7 dias.</span></p></section>
+
+<section class="faq"><h2>Perguntas frequentes</h2><details><summary>Qual a diferença entre tabela Price e SAC?</summary><p>Na Price as parcelas são iguais do início ao fim. No SAC a amortização é fixa e as parcelas começam maiores e vão caindo; o total de juros no SAC costuma ser menor.</p></details><details><summary>Por que a parcela do banco é diferente da calculadora?</summary><p>Geralmente por causa de IOF, tarifas e seguros incluídos no valor financiado, ou porque a primeira parcela vence com mais de 30 dias. Peça o CET e a planilha de evolução do saldo.</p></details><details><summary>Tenho só a taxa anual. Posso usar?</summary><p>Converta para mensal: (1 + anual)^(1/12) − 1. Não divida a taxa anual por 12, isso superestima a taxa mensal.</p></details><details><summary>Dar entrada maior compensa?</summary><p>Cada real de entrada deixa de pagar juros pelo prazo todo. Compare com o que esse dinheiro deixaria de fazer (por exemplo, sua reserva de emergência) antes de decidir.</p></details></section>
+<section><h2>Outras calculadoras de dívidas e financiamentos</h2><ul class="lista"><li><a href="/comprometimento-de-renda/">Calculadora de comprometimento de renda com dívidas</a></li><li><a href="/juros-e-multa-por-atraso/">Calculadora de juros e multa por atraso</a></li></ul></section>
+
+</main>
+<footer class="rodape"><div class="wrap">
+<p><a href="/">Todas as calculadoras</a> · <a href="/privacidade/">Política de Privacidade</a> · <a href="/termos/">Termos de Uso</a></p>
+<p class="miudo">Ferramentas informativas. Os resultados são estimativas e não substituem orientação profissional financeira, contábil ou jurídica.</p>
+</div></footer>
+<script>window.CALC={"entradas": ["valor", "entrada", "juros", "n"], "saidas": [{"id": "fin", "expr": "max(valor - entrada, 0)", "fmt": "brl"}, {"id": "r", "expr": "juros / 100", "oculta": true}, {"id": "pmt", "expr": "se(r == 0, fin / n, fin * r / (1 - pow(1 + r, -n)))", "fmt": "brl", "invalido": "informe o prazo"}, {"id": "total", "expr": "pmt * n", "fmt": "brl", "invalido": "—"}, {"id": "jt", "expr": "total - fin", "fmt": "brl", "invalido": "—"}, {"id": "custo", "expr": "entrada + total", "fmt": "brl", "invalido": "—"}], "exemplo": {"valor": 12000, "entrada": 2000, "juros": 1, "n": 12}};</script>
+<script src="/assets/calc.js" defer></script>
+<script data-goatcounter="https://planejahome.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
